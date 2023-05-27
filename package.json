@@ -1,5 +1,5 @@
 {
-  "name": "lerna-mern",
+  "name": "eleink",
   "version": "1.0.0",
   "description": "MERN App in monorepository using Lerna",
   "scripts": {
