@@ -5,6 +5,7 @@ import UserForm from "./user-form";
 import Search from "./search";
 import { Home } from "./pages/home";
 import { BannerHome } from "./components/banner/banner";
+import { AboutHome } from "./components/about/about";
  
 class Main extends React.Component {
   render() {
@@ -14,6 +15,7 @@ class Main extends React.Component {
         <div>
           <Home></Home>
           <BannerHome></BannerHome>
+          <AboutHome></AboutHome>
         </div>
       </BrowserRouter>
     );
