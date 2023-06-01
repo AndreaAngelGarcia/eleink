@@ -1,46 +1,30 @@
 {
-  "name": "eleink",
-  "version": "1.0.0",
-  "description": "MERN App in monorepository using Lerna",
+  "name": "eleink-prueba",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "lint": "eslint --ignore-path .gitignore .",
-    "lint:fix": "eslint --fix --ignore-path .gitignore .",
-    "postinstall": "lerna bootstrap",
-    "purge": "npm run clear:test && npm run clear:locks && npm run clear:modules",
-    "compose:tools": "docker-compose -f docker/docker-compose.tools.yml up -d",
-    "compose:tools:down": "docker-compose -f docker/docker-compose.tools.yml down",
-    "build": "lerna run build --parallel",
-    "deploy": "lerna run deploy --parallel",
-    "dev": "lerna run start --parallel",
-    "start": "npm run build && npm run deploy"
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Gabrirf/lerna-mern.git"
-  },
-  "keywords": [
-    "node",
-    "nodejs",
-    "react",
-    "reactjs",
-    "mongodb",
-    "api",
-    "rest",
-    "express",
-    "lerna"
-  ],
-  "author": "Gabriel Rodríguez Flores <gabrirf.dev@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Gabrirf/lerna-mern/issues"
-  },
-  "homepage": "https://github.com/Gabrirf/lerna-mern#readme",
   "dependencies": {
-    "lerna": "^3.22.1"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.2"
   },
   "devDependencies": {
-    "eslint": "^7.18.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.22.1"
+    "@types/react": "^18.0.37",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react-swc": "^3.0.0",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.38.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.3.4",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2",
+    "vite": "^4.3.9"
   }
 }
