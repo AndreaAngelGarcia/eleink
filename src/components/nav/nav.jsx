@@ -1,4 +1,3 @@
-
 export function NavigationMenu() {
   return (
     <div className="italianno bg-white">
@@ -13,7 +12,7 @@ export function NavigationMenu() {
             </li>
           </ul>
           <a href="home.html" className="object-center inline-flex items-center mx-auto">
-            <img src="./assets/images/LOGO.png" className="w-40 mx-auto" />
+            <img src="./src/assets/images/LOGO.png" className="w-40 mx-auto" />
           </a>
           <ul className="flex items-center hidden space-x-24 lg:flex">
             <li><a href="cita.html" className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 

@@ -1,7 +1,7 @@
 
 export function BannerHome() {
     return (
-        <section id="banner" className="relative bg-banner h-full bg-cover bg-center bg-no-repeat animate-fadeIn aos-animate"
+        <section id="banner" className="relative bg-banner h-full bg-cover bg-center bg-no-repeat animate-fadeIn aos-animate m-0 p-0"
             data-aos="zoom-in" data-aos-delay="500" data-aos-duration="1000">
 
             <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:h-screen">

@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
     @font-face {
         font-family: 'Italiana', serif;
         src: url('https://fonts.googleapis.com/css2?family=Italiana&family=League+Spartan:wght@300&family=Montserrat:ital@1&family=Open+Sans&display=swap');
@@ -22,10 +28,12 @@
     }
     
     #banner {
-        background-image: url('../img/banner2_1.jpg');
+        background-image: url('./assets/images/banner2_1.jpg');
+        margin: 0;
+        padding: 0;
         /*height: 600px;*/
     }
-   
+    
     .open {
         display:block;
     }
@@ -48,14 +56,12 @@
         background-color: rgba(0,0,0,0.5);
         justify-content: center;
         align-items: center;
-      }
+    }
       
-      .popup-content {
+    .popup-content {
         background-color: #fff;
         border-radius: 10px;
         padding: 20px;
         text-align: center;
-      }
-      
-      
+    }    
 }
