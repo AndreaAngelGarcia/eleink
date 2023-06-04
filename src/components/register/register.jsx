@@ -1,4 +1,3 @@
-import './index.css';
 import { PlusOutlined } from '@ant-design/icons';
 import {
   Button,
