@@ -2,6 +2,7 @@ import { BannerHome } from '../components/banner/banner';
 import { GalleryHome } from '../components/gallery-home/gallery-home';
 import { NavigationMenu } from '../components/nav/nav';
 import { Footer } from '../components/footer/footer';
+import {FormDisabledDemo} from '../components/register/register';
 
 export function Home() {
     return(
@@ -10,6 +11,7 @@ export function Home() {
         <BannerHome/>
         <GalleryHome/>
         <Footer/>
+        <FormDisabledDemo/>
         </div>
     )
 }
