@@ -1,24 +1,27 @@
+import { Link } from 'react-router-dom';
+
 export function NavigationMenu() {
   return (
     <div className="italianno bg-white">
       <div className="px-4 py-6 mx-auto lg:py-8 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="relative flex items-center lg:justify-center">
           <ul className="flex items-center hidden space-x-24 lg:flex">
-            <li><a href="home.html" className="font-medium tracking-widest text-6xl text-black transition-colors 
-            duration-200 hover:font-bold">Inicio</a>
+            <li><Link to="/" className="font-medium tracking-widest text-6xl text-black transition-colors 
+            duration-200 hover:font-bold">Inicio</Link>
             </li>
-            <li><a href="portfolio.html" className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 
-              hover:text-teal-accent-400 hover:font-bold">Portfolio</a>
+            <li><Link to="/portfolio" className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 
+              hover:text-teal-accent-400 hover:font-bold">Portfolio</Link>
             </li>
           </ul>
-          <a href="home.html" className="object-center inline-flex items-center mx-auto">
+          <Link to="/" className="object-center inline-flex items-center mx-auto">
             <img src="./src/assets/images/LOGO.png" className="w-40 mx-auto" />
-          </a>
+          </Link>
           <ul className="flex items-center hidden space-x-24 lg:flex">
-            <li><a href="cita.html" className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 
-              hover:text-teal-accent-400 hover:font-bold">Pide cita</a></li>
-            <li><a href="tienda.html" className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 
-              hover:text-teal-accent-400 hover:font-bold">Tienda</a>
+            <li><Link to="/booking" className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 
+              hover:text-teal-accent-400 hover:font-bold">Pide cita</Link></li>
+
+            <li><Link to="/shop" className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 
+              hover:text-teal-accent-400 hover:font-bold">Tienda</Link>
             </li>
           </ul>
           <div className="lg:hidden">
@@ -49,18 +52,17 @@ export function NavigationMenu() {
                 </div>
                 <nav>
                   <ul className="flex flex-col items-center justify-center space-y-6">
-                    <li><a href="home.html"
-                      className="font-medium text-4xl tracking-wide text-black transition-colors duration-200 ease-in hover:font-bold">Inicio</a>
+                    <li><Link href="/"
+                      className="font-medium text-4xl tracking-wide text-black transition-colors duration-200 ease-in hover:font-bold">Inicio</Link>
                     </li>
-                    <li><a href="portfolio.html"
-                      className="font-medium text-4xl tracking-wide text-black transition-colors duration-200 ease-in hover:font-bold">Portfolio</a>
+                    <li><Link href="/portfolio"
+                      className="font-medium text-4xl tracking-wide text-black transition-colors duration-200 ease-in hover:font-bold">Portfolio</Link>
                     </li>
-                    <li><a href="cita.html"
-                      className="font-medium text-4xl tracking-wide text-black transition-colors duration-200 ease-in hover:font-bold">Pide
-                      Cita</a>
+                    <li><Link href="/booking"
+                      className="font-medium text-4xl tracking-wide text-black transition-colors duration-200 ease-in hover:font-bold">Pide Cita</Link>
                     </li>
-                    <li><a href="tienda.html"
-                      className="font-medium text-4xl tracking-wide text-black transition-colors duration-200 ease-in hover:font-bold">Tienda</a>
+                    <li><Link href="/shop"
+                      className="font-medium text-4xl tracking-wide text-black transition-colors duration-200 ease-in hover:font-bold">Tienda</Link>
                     </li>
                   </ul>
                 </nav>
