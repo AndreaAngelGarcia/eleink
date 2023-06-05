@@ -1,7 +1,7 @@
 export function Footer() {
     return (
         <div>
-            <img src="../img/foto.png" />
+            <img src="./src/assets/images/foto.png" />
             <footer className="italianno text-3xl lg:text-4xl text-center bg-black text-white">
                 <div className="px-6 pt-6">
                     <div className="flex justify-center mb-6">
