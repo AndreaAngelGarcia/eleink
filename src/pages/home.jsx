@@ -6,7 +6,7 @@ import {FormDisabledDemo} from '../components/register/register';
 //import {Login} from '../components/login/login';
 import { Login2 } from '../components/login/login2';
 
-export function Home() {
+export function HomePage() {
     return(
         <div className="m-0 p-0">
         <NavigationMenu/>

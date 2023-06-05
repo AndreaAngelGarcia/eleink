@@ -1,7 +1,7 @@
 import { NavigationMenu } from '../components/nav/nav';
 import { Footer } from '../components/footer/footer';
 
-export function ShopPage() {
+export function LoginPage() {
     return(
         <div className="m-0 p-0">
         <NavigationMenu/>
