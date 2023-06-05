@@ -1,9 +1,14 @@
 export function Login2() {
     return (
         <section>
+            {/* Separadores negros*/}
+            <img src="./src/assets/images/foto.png" />
+            <img src="./src/assets/images/foto4.png" />
+
+            {/* Sección login*/}
             <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
-                <div className="flex flex-col items-center justify-center bg-gray-100 rounded-tl-lg rounded-bl-lg p-4">
-                    <div className="my-8">
+                <div className="flex flex-col items-center justify-center bg-gray-100 rounded-tl-lg rounded-bl-lg m-0">
+                    <div className="my-4">
                         <img src="./src/assets/images/LOGO.png" alt="JT Devs" width="100" height="100" />
                     </div>
                     <div className="flex flex-col items-center gap-8">
@@ -85,11 +90,12 @@ export function Login2() {
                         </span>
                     </div>
                 </div>
-                
-                <div className="hidden lg:flex items-center justify-center border-t border-r border-b rounded-tr-lg rounded-br-lg">
-                    <img src="./src/assets/images/elena3.jpg" className="w-50 object-cover" />
+
+                {/* Foto parte derecha */}
+                <div className="hidden lg:flex items-center justify-center">
+                    <img src="./src/assets/images/elena.jpg" className="w-7/12 object-cover" />
                 </div>
             </div>
         </section>
-    );
+    )
 }
