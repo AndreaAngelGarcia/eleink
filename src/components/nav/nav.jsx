@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import { AiOutlineUser } from "react-icons/ai";
+
 
 export function NavigationMenu() {
   return (
@@ -23,7 +25,12 @@ export function NavigationMenu() {
             <li><Link to="/shop" className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 
               hover:text-teal-accent-400 hover:font-bold">Tienda</Link>
             </li>
+            <li><Link to="/login">
+              <AiOutlineUser className="inline-block w-8 h-8 mr-2" />
+              </Link>
+            </li>
           </ul>
+
           <div className="lg:hidden">
             <button id="open-menu" aria-label="Open Menu" title="Open Menu"
               className="open p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline">
