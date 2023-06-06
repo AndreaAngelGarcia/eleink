@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export function Login2() {
     return (
         <section>
@@ -63,12 +65,9 @@ export function Login2() {
                                     <label htmlFor="remember">Recordarme</label>
                                 </div>
                                 <div>
-                                    <a
-                                        href="#"
-                                        className="hover:underline hover:text-gray-900 transition-all"
-                                    >
+                                    <Link to="/signin" className="hover:underline hover:text-gray-900 transition-all">
                                         ¿Olvidaste tu contraseña?
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="w-full max-w-md mx-auto">
@@ -84,9 +83,9 @@ export function Login2() {
                     <div>
                         <span className="text-gray-500">
                             ¿No tienes cuenta?{" "}
-                            <a href="#" className="text-gray-900 hover:underline transition-all">
+                            <Link to="/signin" className="text-gray-900 hover:underline transition-all">
                                 Regístrate
-                            </a>
+                            </Link>
                         </span>
                     </div>
                 </div>

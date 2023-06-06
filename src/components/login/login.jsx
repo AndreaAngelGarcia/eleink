@@ -44,8 +44,6 @@ export function Login() {
                                 </label>
                                 </DatePicker>
                                 
-                                
-                               
                                 <div className="relative mt-5">
                                     <input type="phone" name="Teléfono" id="phone" placeholder="Teléfono"
                                         className="peer w-full rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
@@ -82,6 +80,6 @@ export function Login() {
                     </div>
                 </div>
             </div>
-        </section >
+        </section>
     )
 }

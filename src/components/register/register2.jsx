@@ -1,5 +1,32 @@
 import { Link } from 'react-router-dom';
-//import { PlusOutlined } from '@ant-design/icons';
+//import { DatePicker } from '@ant-design/icons';
+
+{/* LLAMAMOS AL BACKEND */ }
+
+const formData = {
+    "name": "",
+    "email": "",
+    "birthday": "",
+    "phone": "",
+    "password": "",
+    "userInstagram": "",
+    "rol": ""
+};
+
+fetch('https://eleink-openapi.onrender.com/signin', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formData),
+})
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 
 export function Register2() {
     return (
@@ -37,7 +64,7 @@ export function Register2() {
                             {/*NOMBRE*/}
                             <div className="flex justify-center">
                                 <div className="relative w-72 mt-5 ">
-                                    <input type="email" name="email" id="email" placeholder="Correo electrónico"
+                                    <input type="text" name="email" id="email" placeholder="Correo electrónico"
                                         className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
                                         autoComplete="off" required />
                                     <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
@@ -79,7 +106,7 @@ export function Register2() {
                             {/*TELÉFONO*/}
                             <div className="flex justify-center">
                                 <div className="relative w-72 mt-5 ">
-                                    <input type="password" name="email" id="email" placeholder="Correo electrónico"
+                                    <input type="phone" name="email" id="email" placeholder="Correo electrónico"
                                         className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
                                         autoComplete="off" required />
                                     <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
@@ -93,7 +120,7 @@ export function Register2() {
                             {/*USUARIO INSTAGRAM*/}
                             <div className="flex justify-center">
                                 <div className="relative w-72 mt-5 ">
-                                    <input type="email" name="email" id="email" placeholder="Correo electrónico"
+                                    <input type="text" name="email" id="email" placeholder="Correo electrónico"
                                         className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
                                         autoComplete="off" required />
                                     <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
@@ -117,7 +144,7 @@ export function Register2() {
                                     </label>
                                 </div>
                             </div>
-                            
+
                             <div className="w-full max-w-md mx-auto flex items-center justify-between text-gray-500 mb-8">
                                 <div className="flex items-center gap-2">
                                     <input type="checkbox" id="remember" />
@@ -132,7 +159,7 @@ export function Register2() {
 
                             <div className="w-full max-w-md mx-auto mb-4">
                                 <button type="submit" className="w-full bg-gray-200 py-2 px-4 rounded-lg text-gray-900 hover:bg-gray-300 transition-colors">
-                                Regístrate
+                                    Regístrate
                                 </button>
                             </div>
                         </form>

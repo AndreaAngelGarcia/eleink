@@ -3,7 +3,7 @@ import { Footer } from '../components/footer/footer';
 
 export function PortfolioPage() {
     return(
-        <div className="m-0 p-0">
+        <div>
         <NavigationMenu/>
         <Footer/>
         </div>
