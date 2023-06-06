@@ -1,8 +1,19 @@
 import { Link } from 'react-router-dom';
 import { AiOutlineUser } from "react-icons/ai";
-
+import Dropdown from 'react-dropdown-select';
 
 export function NavigationMenu() {
+  const dropdownOptions = [
+    { value: 'option1', label: 'Citas' },
+    { value: 'option2', label: 'Option 2' },
+    { value: 'option3', label: 'Cerrar sesión' }
+  ];
+
+  const handleDropdownChange = (selectedOption) => {
+    // Manejar el cambio de opción seleccionada aquí
+    console.log(selectedOption);
+  };
+
   return (
     <div className="italianno bg-white">
       <div className="px-4 py-6 mx-auto lg:py-8 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -27,7 +38,12 @@ export function NavigationMenu() {
             </li>
             <li><Link to="/login">
               <AiOutlineUser className="inline-block w-8 h-8 mr-2" />
-              </Link>
+              <Dropdown
+                options={dropdownOptions}
+                onChange={handleDropdownChange}
+                placeholder="Dropdown"
+              />
+            </Link>
             </li>
           </ul>
 

@@ -1,34 +1,41 @@
 import { Link } from 'react-router-dom';
 //import { DatePicker } from '@ant-design/icons';
 
-{/* LLAMAMOS AL BACKEND */ }
-
-const formData = {
-    "name": "",
-    "email": "",
-    "birthday": "",
-    "phone": "",
-    "password": "",
-    "userInstagram": "",
-    "rol": ""
-};
-
-fetch('https://eleink-openapi.onrender.com/signin', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(formData),
-})
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
+import { useState } from 'react';
 
 export function Register2() {
+    const [formulario, setFormulario] = useState({
+        name: '',
+        email: '',
+        birthday: '',
+        phone: '',
+        password: '',
+        userInstagram: '',
+        rol: '',
+    });
+
+    const handleChange = (x) => {
+        setFormulario({ ...formulario, [x.target.name]: x.target.value })
+    };
+
+    const handleSubmit = (x) => {
+        x.preventDefault(); 
+        fetch('http://localhost:3000/signin', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formulario)
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    };
+
     return (
         <section>
             {/* Separadores negros*/}
@@ -43,7 +50,7 @@ export function Register2() {
                     </div>
                     <div className="flex flex-col items-center gap-8">
                         <h1 className="text-4xl font-bold text-gray-900">Bienvenido a ELEINK</h1>
-                        <button className="flex items-center gap-2 bg-gray-200 py-2 px-4 rounded-lg">
+                        <button className="flex items-center gap-2 bg-gray-200 py-2 px-4 rounded-lg" >
                             <svg stroke="currentColor" fill="currentColor" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                 <g>
                                     <path fill="none" d="M0 0h24v24H0z"></path>
@@ -64,7 +71,7 @@ export function Register2() {
                             {/*NOMBRE*/}
                             <div className="flex justify-center">
                                 <div className="relative w-72 mt-5 ">
-                                    <input type="text" name="email" id="email" placeholder="Correo electrónico"
+                                    <input type="text" name="name" id="name" placeholder="Correo electrónico" onChange={handleChange}
                                         className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
                                         autoComplete="off" required />
                                     <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
@@ -78,7 +85,7 @@ export function Register2() {
                             {/*EMAIL*/}
                             <div className="flex justify-center">
                                 <div className="relative w-72 mt-5 ">
-                                    <input type="email" name="email" id="email" placeholder="Correo electrónico"
+                                    <input type="email" name="email" id="email" placeholder="Correo electrónico" onChange={handleChange}
                                         className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
                                         autoComplete="off" required />
                                     <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
@@ -92,7 +99,7 @@ export function Register2() {
                             {/*FECHA NACIMIENTO*/}
                             <div className="flex justify-center">
                                 <div className="relative w-72 mt-5 ">
-                                    <input type="text" name="email" id="email" placeholder="Correo electrónico"
+                                    <input type="text" name="birthday" id="birthday" placeholder="Correo electrónico" onChange={handleChange}
                                         className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
                                         autoComplete="off" required />
                                     <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
@@ -106,7 +113,7 @@ export function Register2() {
                             {/*TELÉFONO*/}
                             <div className="flex justify-center">
                                 <div className="relative w-72 mt-5 ">
-                                    <input type="phone" name="email" id="email" placeholder="Correo electrónico"
+                                    <input type="phone" name="phone" id="phone" placeholder="Correo electrónico" onChange={handleChange}
                                         className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
                                         autoComplete="off" required />
                                     <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
@@ -120,7 +127,7 @@ export function Register2() {
                             {/*USUARIO INSTAGRAM*/}
                             <div className="flex justify-center">
                                 <div className="relative w-72 mt-5 ">
-                                    <input type="text" name="email" id="email" placeholder="Correo electrónico"
+                                    <input type="text" name="userInstagram" id="userInstagram" placeholder="Correo electrónico" onChange={handleChange}
                                         className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
                                         autoComplete="off" required />
                                     <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
@@ -134,7 +141,7 @@ export function Register2() {
                             {/*CONTRASEÑA*/}
                             <div className="flex justify-center  mb-6">
                                 <div className="relative w-72 mt-5 ">
-                                    <input type="password" name="email" id="email" placeholder="Correo electrónico"
+                                    <input type="password" name="password" id="password" placeholder="Correo electrónico" onChange={handleChange}
                                         className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
                                         autoComplete="off" required />
                                     <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
@@ -158,7 +165,7 @@ export function Register2() {
                             </div>
 
                             <div className="w-full max-w-md mx-auto mb-4">
-                                <button type="submit" className="w-full bg-gray-200 py-2 px-4 rounded-lg text-gray-900 hover:bg-gray-300 transition-colors">
+                                <button type="submit" onClick={handleSubmit} className="w-full bg-gray-200 py-2 px-4 rounded-lg text-gray-900 hover:bg-gray-300 transition-colors">
                                     Regístrate
                                 </button>
                             </div>
