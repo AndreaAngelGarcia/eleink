@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineUser } from "react-icons/ai";
 import Dropdown from 'react-dropdown-select';
 
 export function NavigationMenu() {
+  const [dropdownVisible, setDropdownVisible] = useState(false);
+
   const dropdownOptions = [
     { value: 'option1', label: 'Citas' },
     { value: 'option2', label: 'Option 2' },
@@ -10,8 +13,11 @@ export function NavigationMenu() {
   ];
 
   const handleDropdownChange = (selectedOption) => {
-    // Manejar el cambio de opción seleccionada aquí
     console.log(selectedOption);
+  };
+
+  const toggleDropdown = () => {
+    setDropdownVisible(!dropdownVisible);
   };
 
   return (
@@ -19,37 +25,40 @@ export function NavigationMenu() {
       <div className="px-4 py-6 mx-auto lg:py-8 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="relative flex items-center lg:justify-center">
           <ul className="flex items-center hidden space-x-24 lg:flex">
-            <li><Link to="/" className="font-medium tracking-widest text-6xl text-black transition-colors 
-            duration-200 hover:font-bold">Inicio</Link>
+            <li>
+              <Link to="/" className="font-medium tracking-widest text-6xl text-black transition-colors duration-200 hover:font-bold">Inicio</Link>
             </li>
-            <li><Link to="/portfolio" className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 
-              hover:text-teal-accent-400 hover:font-bold">Portfolio</Link>
+            <li>
+              <Link to="/portfolio" className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 hover:text-teal-accent-400 hover:font-bold">Portfolio</Link>
             </li>
           </ul>
           <Link to="/" className="object-center inline-flex items-center mx-auto">
             <img src="./src/assets/images/LOGO.png" className="w-40 mx-auto" />
           </Link>
           <ul className="flex items-center hidden space-x-24 lg:flex">
-            <li><Link to="/booking" className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 
-              hover:text-teal-accent-400 hover:font-bold">Pide cita</Link></li>
-
-            <li><Link to="/shop" className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 
-              hover:text-teal-accent-400 hover:font-bold">Tienda</Link>
+            <li>
+              <Link to="/booking" className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 hover:text-teal-accent-400 hover:font-bold">Pide cita</Link>
             </li>
-            <li><Link to="/login">
-              <AiOutlineUser className="inline-block w-8 h-8 mr-2" />
-              <Dropdown
-                options={dropdownOptions}
-                onChange={handleDropdownChange}
-                placeholder="Dropdown"
-              />
-            </Link>
+            <li>
+              <Link to="/shop" className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 hover:text-teal-accent-400 hover:font-bold">Tienda</Link>
+            </li>
+            <li>
+              <button onClick={toggleDropdown} className="focus:outline-none">
+                <AiOutlineUser className="inline-block w-8 h-8 mr-2" />
+              </button>
+              {dropdownVisible && (
+                <div className="absolute right-0 mt-2 bg-white border text-2xl rounded shadow-lg">
+                  <Dropdown
+                    options={dropdownOptions}
+                    onChange={handleDropdownChange}
+                    placeholder="Dropdown"
+                  />
+                </div>
+              )}
             </li>
           </ul>
-
           <div className="lg:hidden">
-            <button id="open-menu" aria-label="Open Menu" title="Open Menu"
-              className="open p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline">
+            <button id="open-menu" aria-label="Open Menu" title="Open Menu" className="open p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline">
               <svg className="hamburguesa w-6 text-black lg:hidden" viewBox="0 0 24 24">
                 <path fill="currentColor" d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z">
                 </path>
@@ -58,8 +67,7 @@ export function NavigationMenu() {
                 </path>
               </svg>
             </button>
-
-            <div id="menu" className="absolute top-0 left-0 w-full hidden z-10">
+            <div id="menu" className={`absolute top-0 left-0 w-full ${dropdownVisible ? '' : 'hidden'} z-10`}>
               <div className="p-5 bg-white border rounded shadow-sm">
                 <div className="flex items-center justify-between mb-4">
                   <div>
@@ -97,6 +105,4 @@ export function NavigationMenu() {
     </div>
   )
 }
-
-
 

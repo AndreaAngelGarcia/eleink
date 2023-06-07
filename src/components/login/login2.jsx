@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 export function Login2() {
     return (
         <section>
-            {/* Separadores negros*/}
-            <img src="./src/assets/images/foto.png" />
-            <img src="./src/assets/images/foto4.png" />
+            
 
             {/* Sección login*/}
             <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
