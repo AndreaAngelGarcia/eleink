@@ -15,7 +15,7 @@ export function BannerHome() {
 
                 <div className="flex justify-end">
                     <p className="italianno m-0 text-4xl text-purple-900 font-medium lg:text-6xl max-w-lg sm:text-6xl">
-                        Tatto artist
+                        Tattoo artist
                     </p>
 
                 </div>
