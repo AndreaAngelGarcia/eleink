@@ -1,28 +1,21 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AiOutlineUser } from "react-icons/ai";
-import Dropdown from 'react-dropdown-select';
+import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
-export function NavigationMenu() {
-  const [dropdownVisible, setDropdownVisible] = useState(false);
+NavigationMenu.propTypes = {
+  isLoggedIn: PropTypes.bool.isRequired,
+};
 
-  const dropdownOptions = [
-    { value: 'option1', label: 'Citas' },
-    { value: 'option2', label: 'Option 2' },
-    { value: 'option3', label: 'Cerrar sesión' }
-  ];
+export function NavigationMenu({ isLoggedIn }) {
+  const [menuText, setMenuText] = useState(isLoggedIn ? 'Logout' : 'Login');
 
-  const handleDropdownChange = (selectedOption) => {
-    console.log(selectedOption);
-  };
-
-  const toggleDropdown = () => {
-    setDropdownVisible(!dropdownVisible);
-  };
+  useEffect(() => {
+    setMenuText(isLoggedIn ? 'Logout' : 'Login');
+  }, [isLoggedIn]);
 
   return (
     <div className="italianno bg-white">
-      <div className="px-4 py-6 mx-auto lg:py-8 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+      <div className="px-4 py-6 mx-auto lg:py-8 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pb-0">
         <div className="relative flex items-center lg:justify-center">
           <ul className="flex items-center hidden space-x-24 lg:flex">
             <li>
@@ -39,21 +32,23 @@ export function NavigationMenu() {
             <li>
               <Link to="/booking" className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 hover:text-teal-accent-400 hover:font-bold">Pide cita</Link>
             </li>
-            <li>
+            {/*<li>
               <Link to="/shop" className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 hover:text-teal-accent-400 hover:font-bold">Tienda</Link>
-            </li>
+            </li>*/}
             <li>
-              <button onClick={toggleDropdown} className="focus:outline-none">
-                <AiOutlineUser className="inline-block w-8 h-8 mr-2" />
-              </button>
-              {dropdownVisible && (
-                <div className="absolute right-0 mt-2 bg-white border text-2xl rounded shadow-lg">
-                  <Dropdown
-                    options={dropdownOptions}
-                    onChange={handleDropdownChange}
-                    placeholder="Dropdown"
-                  />
-                </div>
+              {isLoggedIn ? (
+                <button
+                  className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 hover:text-teal-accent-400 hover:font-bold"
+                >
+                  {menuText}
+                </button>
+              ) : (
+                <Link
+                  to="/login"
+                  className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 hover:text-teal-accent-400 hover:font-bold"
+                >
+                  {menuText}
+                </Link>
               )}
             </li>
           </ul>
@@ -67,7 +62,7 @@ export function NavigationMenu() {
                 </path>
               </svg>
             </button>
-            <div id="menu" className={`absolute top-0 left-0 w-full ${dropdownVisible ? '' : 'hidden'} z-10`}>
+            <div id="menu" className={`absolute top-0 left-0 w-full  z-10`}>
               <div className="p-5 bg-white border rounded shadow-sm">
                 <div className="flex items-center justify-between mb-4">
                   <div>
@@ -105,4 +100,3 @@ export function NavigationMenu() {
     </div>
   )
 }
-

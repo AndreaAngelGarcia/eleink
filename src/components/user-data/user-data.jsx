@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 
 export function UserData() {
     const [formulario, setFormulario] = useState({
@@ -36,10 +37,10 @@ export function UserData() {
           .then(data => {
             if (data.success) {
               // Los campos del usuario se modificaron correctamente, puedes redirigir o mostrar un mensaje de éxito
-              console.log('Campos del usuario modificados correctamente');
+              toast.success('Campos del usuario modificados correctamente');
             } else {
               // Hubo un error al modificar los campos del usuario, puedes mostrar un mensaje de error
-              console.error('Error al modificar los campos del usuario');
+              toast.error('Error al modificar los campos del usuario');
             }
           })
           .catch(error => {
@@ -59,10 +60,10 @@ export function UserData() {
             .then((response) => response.json())
             .then((data) => {
                 if (data) {
-                    console.log('Usuario eliminado correctamente');
+                    toast.success('Usuario eliminado correctamente');
                     // Realiza la redirección a la página deseada, por ejemplo, la página de inicio
                 } else {
-                    console.error('Error al eliminar el usuario');
+                    toast.error('Error al eliminar el usuario');
                 }
             })
             .catch((error) => {
@@ -84,7 +85,7 @@ export function UserData() {
                     <div className="relative w-72 mt-5 ">
                         <input type="text" name="name" id="name" placeholder="Correo electrónico" onChange={handleChange}
                             className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
-                            autoComplete="off" required />
+                            autoComplete="off"/>
                         <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
                                         ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
                                         peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
@@ -98,7 +99,7 @@ export function UserData() {
                     <div className="relative w-72 mt-5 ">
                         <input type="email" name="email" id="email" placeholder="Correo electrónico" onChange={handleChange}
                             className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
-                            autoComplete="off" required />
+                            autoComplete="off"/>
                         <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
                                         ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
                                         peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
@@ -112,7 +113,7 @@ export function UserData() {
                     <div className="relative w-72 mt-5 ">
                         <input type="text" name="birthday" id="birthday" placeholder="Correo electrónico" onChange={handleChange}
                             className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
-                            autoComplete="off" required />
+                            autoComplete="off"/>
                         <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
                                         ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
                                         peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
@@ -126,7 +127,7 @@ export function UserData() {
                     <div className="relative w-72 mt-5 ">
                         <input type="phone" name="phone" id="phone" placeholder="Correo electrónico" onChange={handleChange}
                             className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
-                            autoComplete="off" required />
+                            autoComplete="off"/>
                         <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
                                         ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
                                         peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
@@ -140,7 +141,7 @@ export function UserData() {
                     <div className="relative w-72 mt-5 ">
                         <input type="text" name="userInstagram" id="userInstagram" placeholder="Correo electrónico" onChange={handleChange}
                             className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
-                            autoComplete="off" required />
+                            autoComplete="off"/>
                         <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
                                         ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
                                         peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
@@ -154,7 +155,7 @@ export function UserData() {
                     <div className="relative w-72 mt-5 ">
                         <input type="password" name="password" id="password" placeholder="Correo electrónico" onChange={handleChange}
                             className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
-                            autoComplete="off" required />
+                            autoComplete="off"/>
                         <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
                                         ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
                                         peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
@@ -166,14 +167,14 @@ export function UserData() {
                 <div className="w-full max-w-md mx-auto mb-4">
                     <button type="submit" onClick={handleEdit}
                         className="w-full bg-gray-200 py-2 px-4 rounded-lg text-gray-900 hover:bg-gray-300 transition-colors">
-                        Editar información
+                        <ToastContainer /> Editar información
                     </button>
                 </div>
 
                 <div className="w-full max-w-md mx-auto mb-4">
                     <button type="button" onClick={handleDelete}
                         className="w-full bg-red-600 py-2 px-4 rounded-lg text-white hover:bg-gray-300 transition-colors">
-                        Eliminar usuario
+                         <ToastContainer /> Eliminar usuario
                     </button>
                 </div>
 
