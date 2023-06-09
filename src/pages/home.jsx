@@ -1,5 +1,5 @@
 import { ButtonBackToTop } from '../components/ButtonBackToTop/button-back-to-top';
-import { NavigationMenu } from '../components/nav/nav';
+
 import { BannerHome } from '../components/banner/banner';
 import { AboutHome } from '../components/about/about';
 import { BlackDividers } from '../components/black-dividers/black-dividers';
@@ -11,7 +11,6 @@ export function HomePage() {
     return (
         <div className="m-0 p-0">
             <ButtonBackToTop />
-            <NavigationMenu />
             <BannerHome />
             <AboutHome />
             <BlackDividers />
