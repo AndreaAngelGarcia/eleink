@@ -6,6 +6,7 @@ import { BookingPage } from './pages/booking';
 import { ShopPage } from './pages/shop';
 import { LoginPage } from './pages/login';
 import { SigninPage } from './pages/signin';
+import { UserDataPage } from './pages/user-data';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/shop" element={ <ShopPage/> } />
         <Route path="/login" element={ <LoginPage/> } />
         <Route path="/signin" element={ <SigninPage/> } />
+        <Route path="/user-data" element={ <UserDataPage/>} />
       </Routes>
     </BrowserRouter>
   );
