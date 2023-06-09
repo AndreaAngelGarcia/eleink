@@ -1,0 +1,146 @@
+import { useState, useEffect } from 'react';
+
+export function UserData() {
+    const [formulario, setFormulario] = useState({
+        name: '',
+        email: '',
+        birthday: '',
+        phone: '',
+        password: '',
+        userInstagram: ''
+    });
+
+    useEffect(() => {
+        const userData = JSON.parse(localStorage.getItem('userData'));
+        if (userData) {
+            setFormulario(userData);
+        }
+    }, []);
+
+    const handleChange = (e) => {
+        setFormulario({ ...formulario, [e.target.name]: e.target.value });
+    };
+
+    {/* EDITAR  EL USUARIO */}
+    const handleEdit = (e) => {
+        e.preventDefault();
+        // Lógica para modificar los campos del usuario
+    };
+
+    
+
+    const handleLogout = () => {
+        // Lógica para eliminar al usuario
+    };
+
+    return (
+        <div className="w-full">
+            <form className="max-w-md mx-auto">
+                <div className="flex justify-center">
+                    {/*NOMBRE*/}
+                    <div className="relative w-72 mt-5 ">
+                        <input type="text" name="name" id="name" placeholder="Correo electrónico" onChange={handleChange}
+                            className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
+                            autoComplete="off" required />
+                        <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
+                                        ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
+                                        peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
+                            {formulario.name}
+                        </label>
+                    </div>
+                </div>
+
+                {/*EMAIL*/}
+                <div className="flex justify-center">
+                    <div className="relative w-72 mt-5 ">
+                        <input type="email" name="email" id="email" placeholder="Correo electrónico" onChange={handleChange}
+                            className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
+                            autoComplete="off" required />
+                        <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
+                                        ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
+                                        peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
+                            {formulario.email}
+                        </label>
+                    </div>
+                </div>
+
+                {/*FECHA NACIMIENTO*/}
+                <div className="flex justify-center">
+                    <div className="relative w-72 mt-5 ">
+                        <input type="text" name="birthday" id="birthday" placeholder="Correo electrónico" onChange={handleChange}
+                            className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
+                            autoComplete="off" required />
+                        <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
+                                        ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
+                                        peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
+                            {formulario.birthday}
+                        </label>
+                    </div>
+                </div>
+
+                {/*TELÉFONO*/}
+                <div className="flex justify-center">
+                    <div className="relative w-72 mt-5 ">
+                        <input type="phone" name="phone" id="phone" placeholder="Correo electrónico" onChange={handleChange}
+                            className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
+                            autoComplete="off" required />
+                        <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
+                                        ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
+                                        peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
+                            {formulario.phone}
+                        </label>
+                    </div>
+                </div>
+
+                {/*USUARIO INSTAGRAM*/}
+                <div className="flex justify-center">
+                    <div className="relative w-72 mt-5 ">
+                        <input type="text" name="userInstagram" id="userInstagram" placeholder="Correo electrónico" onChange={handleChange}
+                            className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
+                            autoComplete="off" required />
+                        <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
+                                        ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
+                                        peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
+                            {formulario.userInstagram}
+                        </label>
+                    </div>
+                </div>
+
+                {/*CONTRASEÑA*/}
+                <div className="flex justify-center  mb-6">
+                    <div className="relative w-72 mt-5 ">
+                        <input type="password" name="password" id="password" placeholder="Correo electrónico" onChange={handleChange}
+                            className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
+                            autoComplete="off" required />
+                        <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
+                                        ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
+                                        peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
+                            {formulario.password}
+                        </label>
+                    </div>
+                </div>
+
+                <div className="w-full max-w-md mx-auto mb-4">
+                    <button type="submit" onClick={handleEdit}
+                        className="w-full bg-gray-200 py-2 px-4 rounded-lg text-gray-900 hover:bg-gray-300 transition-colors">
+                        Editar información
+                    </button>
+                </div>
+
+                <div className="w-full max-w-md mx-auto mb-4">
+                    <button type="button" onClick={handleDelete}
+                        className="w-full bg-red-600 py-2 px-4 rounded-lg text-white hover:bg-gray-300 transition-colors">
+                        Eliminar usuario
+                    </button>
+                </div>
+
+                <div className="w-full max-w-md mx-auto mb-4">
+                    <button type="button" onClick={handleLogout}
+                        className="w-full bg-black py-2 px-4 rounded-lg text-white hover:bg-gray-300 transition-colors">
+                        Cerrar sesión
+                    </button>
+                </div>
+            </form>
+        </div>
+    )
+}
