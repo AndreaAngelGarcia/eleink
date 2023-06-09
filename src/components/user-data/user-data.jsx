@@ -10,6 +10,8 @@ export function UserData() {
         userInstagram: ''
     });
 
+    const token = localStorage.getItem('userData');
+
     useEffect(() => {
         const userData = JSON.parse(localStorage.getItem('userData'));
         if (userData) {
@@ -21,13 +23,54 @@ export function UserData() {
         setFormulario({ ...formulario, [e.target.name]: e.target.value });
     };
 
-    {/* EDITAR  EL USUARIO */}
-    const handleEdit = (e) => {
-        e.preventDefault();
-        // Lógica para modificar los campos del usuario
+    {/* EDITAR  EL USUARIO */ }
+    const handleEdit = () => {
+        fetch(`http://localhost:3000/users/${formulario.email}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token.token}`
+            },
+        })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              // Los campos del usuario se modificaron correctamente, puedes redirigir o mostrar un mensaje de éxito
+              console.log('Campos del usuario modificados correctamente');
+            } else {
+              // Hubo un error al modificar los campos del usuario, puedes mostrar un mensaje de error
+              console.error('Error al modificar los campos del usuario');
+            }
+          })
+          .catch(error => {
+            console.error('Error al comunicarse con el servidor', error);
+          });
+      };
+
+    {/* BORRAR EL USUARIO */ }
+    const handleDelete = () => {
+        fetch(`http://localhost:3000/users/${formulario.email}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token.token}`
+            },
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data) {
+                    console.log('Usuario eliminado correctamente');
+                    // Realiza la redirección a la página deseada, por ejemplo, la página de inicio
+                } else {
+                    console.error('Error al eliminar el usuario');
+                }
+            })
+            .catch((error) => {
+                alert(token.token);
+                console.error('Error al comunicarse con el servidor', error);
+            });
     };
 
-    
 
     const handleLogout = () => {
         // Lógica para eliminar al usuario
