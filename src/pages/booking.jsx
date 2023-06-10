@@ -1,7 +1,7 @@
 import { Footer } from '../components/footer/footer';
-import { ButtonBackToTop } from '../components/ButtonBackToTop/button-back-to-top';
 import { BlackDividers } from '../components/black-dividers/black-dividers';
 import { Booking } from '../components/booking/booking';
+import { ButtonBackToTop } from '../components/button-back-to-top/button-back-to-top';
 
 export function BookingPage() {
     return (

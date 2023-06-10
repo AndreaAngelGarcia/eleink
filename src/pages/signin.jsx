@@ -1,7 +1,6 @@
-
 import { Footer } from '../components/footer/footer';
 import { Register2 } from '../components/register/register2';
-import { ButtonBackToTop } from '../components/ButtonBackToTop/button-back-to-top';
+import { ButtonBackToTop } from '../components/button-back-to-top/button-back-to-top';
 
 export function SigninPage() {
     return (
