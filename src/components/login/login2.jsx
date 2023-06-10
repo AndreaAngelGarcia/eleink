@@ -7,8 +7,6 @@ export function Login2() {
     password: '',
   });
 
-    //const [isLoggedIn, setIsLoggedIn] = useState(false);
-
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -33,8 +31,11 @@ export function Login2() {
 
         const datos = await response.json();
         console.log(datos);
-        
+
         localStorage.setItem('userData', JSON.stringify(datos));
+        localStorage.setItem('isLoggedIn', true);
+
+
       } else {
         alert('usuario y/o contraseña incorrecto')
       }
@@ -72,13 +73,13 @@ export function Login2() {
   return (
     <section>
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen lg:mt-0">
-        <div className="flex flex-col items-center justify-center bg-gray-100 rounded-tl-lg rounded-bl-lg m-0 lg:mt-0">
+        <div className="flex flex-col items-center justify-center bg-white rounded-tl-lg rounded-bl-lg m-0 lg:mt-0">
           <div className="my-4">
             <img src="./src/assets/images/LOGO.png" alt="JT Devs" width="100" height="100" />
           </div>
           <div className="flex flex-col items-center gap-8">
             <h1 className="text-4xl font-bold text-gray-900">Bienvenido a ELEINK</h1>
-            <button className="flex items-center gap-2 bg-gray-200 py-2 px-4 rounded-lg">
+            <button className="flex items-center gap-2 bg-white py-2 px-4 rounded-lg">
               <svg
                 stroke="currentColor"
                 fill="currentColor"

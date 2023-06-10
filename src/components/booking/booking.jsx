@@ -11,7 +11,7 @@ export function Booking() {
                 </div>
             </div>
 
-            <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12 lg:ml-32">
+            <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-white py-6 sm:py-12 lg:ml-32">
                 <div className="relative border mx-auto w-full max-w-md bg-white px-8 pt-10 pb-8 shadow-xl sm:rounded-xl sm:px-10">
                     <div className="w-full">
                         <form action="">
