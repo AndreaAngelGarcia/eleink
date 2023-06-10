@@ -1,12 +1,40 @@
+import React, { useState, useEffect } from 'react';
+
 export function GalleryPortfolio({ activeContent }) {
-    return (
-        <div>
-            {/* GALERIA ELEINK */}
-            <div id="content-eleink"
-                className={`content container mx-auto mt-5 p-5 sm:p-8 ${activeContent === 'content-eleink' ? 'active' : ''}`}
-                data-aos="fade-up"
-                data-aos-duration="5000">
-                <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const contentElement = document.getElementById(activeContent);
+      if (contentElement) {
+        const rect = contentElement.getBoundingClientRect();
+        setIsVisible(rect.top < window.innerHeight);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [activeContent]);
+
+  const galleryStyle = {
+    opacity: isVisible ? 1 : 0,
+    transition: 'opacity 1s ease-in-out',
+  };
+
+  return (
+    <div>
+      {/* GALERIA ELEINK */}
+      <div
+        id="content-eleink"
+        className={`content container mx-auto mt-5 p-5 sm:p-8 ${activeContent === 'content-eleink' ? 'fadeIn' : ''}`}
+        data-aos="fade-up"
+        style={activeContent === 'content-eleink' ? galleryStyle : {}}
+      >
+        <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
                     <img src="./src/assets/images/tatuajes/tatuaje8.jpeg" data-aos="fade-up" alt="" />
                     <img src="./src/assets/images/tatuajes/tatuaje18.jpeg" data-aos="fade-up" alt="" />
                     <img src="./src/assets/images/tatuajes/tatuaje17.jpeg" data-aos="fade-up" alt="" />
@@ -24,14 +52,16 @@ export function GalleryPortfolio({ activeContent }) {
                     <img src="./src/assets/images/tatuajes/tatuaje61.jpeg" data-aos="fade-up" alt="" />
                     <img src="./src/assets/images/tatuajes/tatuaje16.jpeg" data-aos="fade-up" alt="" />
                 </div>
-            </div>
+      </div>
 
-            {/* GALERIA ELETINYTATS */}
-            <div id="content-eletinytats"
-                className={`content container mx-auto mt-8 p-5 sm:p-8 ${activeContent === 'content-eletinytats' ? 'active' : ''}`}
-                data-aos="fade-up"
-                data-aos-duration="5000">
-                <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
+      {/* GALERIA ELETINYTATS */}
+      <div
+        id="content-eletinytats"
+        className={`content container mx-auto mt-8 p-5 sm:p-8 ${activeContent === 'content-eletinytats' ? 'fadeIn' : ''}`}
+        data-aos="fade-up"
+        style={activeContent === 'content-eletinytats' ? galleryStyle : {}}
+      >
+        <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
                     <img src="./src/assets/images/tatuajes/tatuaje22.jpeg" data-aos="fade-up" alt="" />
                     <img src="./src/assets/images/tatuajes/tatuaje25.jpeg" data-aos="fade-up" alt="" />
                     <img src="./src/assets/images/tatuajes/tatuaje24.jpeg" data-aos="fade-up" alt="" />
@@ -49,14 +79,16 @@ export function GalleryPortfolio({ activeContent }) {
                     <img src="./src/assets/images/tatuajes/tatuaje39.jpeg" data-aos="fade-up" alt="" />
                     <img src="./src/assets/images/tatuajes/tatuaje40.jpeg" data-aos="fade-up" alt="" />
                 </div>
-            </div>
+      </div>
 
-            {/* GALERIA PIERCING */}
-            <div id="content-piercing"
-                className={`content container mx-auto mt-8 p-5 sm:p-8 ${activeContent === 'content-piercing' ? 'active' : ''}`}
-                data-aos="fade-up"
-                data-aos-duration="5000">
-                <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
+      {/* GALERIA PIERCING */}
+      <div
+        id="content-piercing"
+        className={`content container mx-auto mt-8 p-5 sm:p-8 ${activeContent === 'content-piercing' ? 'fadeIn' : ''}`}
+        data-aos="fade-up"
+        style={activeContent === 'content-piercing' ? galleryStyle : {}}
+      >
+        <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
                     <img src="./src/assets/images/tatuajes/tatuaje43.jpeg" data-aos="fade-up" alt="" />
                     <img src="./src/assets/images/tatuajes/tatuaje44.jpeg" data-aos="fade-up" alt="" />
                     <img src="./src/assets/images/tatuajes/tatuaje45.jpeg" data-aos="fade-up" alt="" />
@@ -74,7 +106,8 @@ export function GalleryPortfolio({ activeContent }) {
                     <img src="./src/assets/images/tatuajes/tatuaje57.jpeg" data-aos="fade-up" alt="" />
                     <img src="./src/assets/images/tatuajes/tatuaje49_4.jpeg" data-aos="fade-up" alt="" />
                 </div>
-            </div>
-        </div>
-    )
+      </div>
+    </div>
+  );
 }
+

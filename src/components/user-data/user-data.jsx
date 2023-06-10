@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 export function UserData() {
+    const navigate = useNavigate();
+    
     const [formulario, setFormulario] = useState({
         name: '',
         email: '',
@@ -72,10 +75,12 @@ export function UserData() {
             });
     };
 
+    
 
     const handleLogout = () => {
-        // Lógica para eliminar al usuario
-    };
+    localStorage.removeItem('userData');
+    navigate('/login'); // Redirige a la página de inicio de sesión
+  };
 
     return (
         <div className="w-full">

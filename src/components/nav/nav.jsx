@@ -1,17 +1,18 @@
-import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { Link, } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
 
 NavigationMenu.propTypes = {
   isLoggedIn: PropTypes.bool.isRequired,
 };
 
 export function NavigationMenu({ isLoggedIn }) {
-  const [menuText, setMenuText] = useState(isLoggedIn ? 'Logout' : 'Login');
+  const [loggedIn, setLoggedIn] = useState(isLoggedIn);
 
   useEffect(() => {
-    setMenuText(isLoggedIn ? 'Logout' : 'Login');
-  }, [isLoggedIn]);
+    const storedLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    setLoggedIn(storedLoggedIn);
+  }, []);
 
   return (
     <div className="italianno bg-white">
@@ -35,22 +36,19 @@ export function NavigationMenu({ isLoggedIn }) {
             {/*<li>
               <Link to="/shop" className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 hover:text-teal-accent-400 hover:font-bold">Tienda</Link>
             </li>*/}
-            <li>
+            <ul>
               {isLoggedIn ? (
-                <button
-                  className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 hover:text-teal-accent-400 hover:font-bold"
-                >
-                  {menuText}
-                </button>
+                // Si el usuario ha iniciado sesión, muestra el enlace a la página de datos de usuario
+                <li>
+                  <Link to="/user-data">Datos de Usuario</Link>
+                </li>
               ) : (
-                <Link
-                  to="/login"
-                  className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 hover:text-teal-accent-400 hover:font-bold"
-                >
-                  {menuText}
-                </Link>
+                // Si el usuario no ha iniciado sesión, muestra el enlace a la página de inicio de sesión
+                <li>
+                  <Link to="/login">Iniciar Sesión</Link>
+                </li>
               )}
-            </li>
+            </ul>
           </ul>
           <div className="lg:hidden">
             <button id="open-menu" aria-label="Open Menu" title="Open Menu" className="open p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline">
@@ -78,16 +76,16 @@ export function NavigationMenu({ isLoggedIn }) {
                 </div>
                 <nav>
                   <ul className="flex flex-col items-center justify-center space-y-6">
-                    <li><Link href="/"
+                    <li><Link to="/"
                       className="font-medium text-4xl tracking-wide text-black transition-colors duration-200 ease-in hover:font-bold">Inicio</Link>
                     </li>
-                    <li><Link href="/portfolio"
+                    <li><Link to="/portfolio"
                       className="font-medium text-4xl tracking-wide text-black transition-colors duration-200 ease-in hover:font-bold">Portfolio</Link>
                     </li>
-                    <li><Link href="/booking"
+                    <li><Link to="/booking"
                       className="font-medium text-4xl tracking-wide text-black transition-colors duration-200 ease-in hover:font-bold">Pide Cita</Link>
                     </li>
-                    <li><Link href="/shop"
+                    <li><Link to="/shop"
                       className="font-medium text-4xl tracking-wide text-black transition-colors duration-200 ease-in hover:font-bold">Tienda</Link>
                     </li>
                   </ul>
