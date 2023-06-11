@@ -17,7 +17,7 @@ export function Login2() {
     x.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3000/login', {
+      const response = await fetch('https://eleink-openapi.onrender.com/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

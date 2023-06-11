@@ -20,7 +20,7 @@ export function Register2() {
 
     const handleSubmit = (x) => {
         x.preventDefault(); 
-        fetch('http://localhost:3000/signin', {
+        fetch('https://eleink-openapi.onrender.com/signin', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
