@@ -10,5 +10,9 @@ export default defineConfig({
       }
     }
   },
-  assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg']
-})
+  server: {
+    fs: {
+      allow: ['..'] 
+    }
+  },
+});
