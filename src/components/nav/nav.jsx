@@ -27,7 +27,7 @@ export function NavigationMenu({ isLoggedIn }) {
             </li>
           </ul>
           <Link to="/" className="object-center inline-flex items-center mx-auto">
-            <img src="./dist/assets/images/LOGO.png" className="w-40 mx-auto" />
+            <img src="./public/assets/images/LOGO.png" className="w-40 mx-auto" />
           </Link>
           <ul className="flex items-center hidden space-x-24 lg:flex">
             <li>
