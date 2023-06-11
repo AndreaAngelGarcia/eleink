@@ -14,6 +14,31 @@ export function NavigationMenu({ isLoggedIn }) {
     setLoggedIn(storedLoggedIn);
   }, []);
 
+  {/* BOTON MENU DE NAVEGACION EN */}
+  useEffect(() => {
+    const openMenuButton = document.getElementById("open-menu");
+    const closeMenuButton = document.getElementById("close-menu");
+    const menu = document.getElementById("menu");
+
+    const openMenu = () => {
+      menu.classList.add("open");
+      menu.classList.remove("hidden");
+    };
+
+    const closeMenu = () => {
+      menu.classList.add("hidden");
+      menu.classList.remove("open");
+    };
+
+    openMenuButton.addEventListener("click", openMenu);
+    closeMenuButton.addEventListener("click", closeMenu);
+
+    return () => {
+      openMenuButton.removeEventListener("click", openMenu);
+      closeMenuButton.removeEventListener("click", closeMenu);
+    };
+  }, []);
+
   return (
     <div className="italianno bg-white">
       <div className="px-4 py-6 mx-auto lg:py-8 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pb-0">
@@ -33,9 +58,6 @@ export function NavigationMenu({ isLoggedIn }) {
             <li>
               <Link to="/booking" className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 hover:text-teal-accent-400 hover:font-bold">Pide cita</Link>
             </li>
-            {/*<li>
-              <Link to="/shop" className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 hover:text-teal-accent-400 hover:font-bold">Tienda</Link>
-            </li>*/}
             <ul>
               {isLoggedIn ? (
                 // Si el usuario ha iniciado sesión, muestra el enlace a la página de datos de usuario
@@ -85,8 +107,8 @@ export function NavigationMenu({ isLoggedIn }) {
                     <li><Link to="/booking"
                       className="font-medium text-4xl tracking-wide text-black transition-colors duration-200 ease-in hover:font-bold">Pide Cita</Link>
                     </li>
-                    <li><Link to="/shop"
-                      className="font-medium text-4xl tracking-wide text-black transition-colors duration-200 ease-in hover:font-bold">Tienda</Link>
+                    <li><Link to="/login"
+                      className="font-medium text-4xl tracking-wide text-black transition-colors duration-200 ease-in hover:font-bold">Login</Link>
                     </li>
                   </ul>
                 </nav>
