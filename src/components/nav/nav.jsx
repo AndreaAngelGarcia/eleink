@@ -25,25 +25,21 @@ export function NavigationMenu({ isLoggedIn }) {
         <div className="relative flex items-center lg:justify-center">
           <ul className="flex items-center hidden space-x-24 lg:flex">
             <li>
-              <Link
-                to="/"
-                className="font-medium tracking-widest text-6xl text-black transition-colors duration-200 hover:font-bold"
-              >
+              <Link to="/" className="font-medium tracking-widest text-6xl text-black transition-colors duration-200 hover:font-bold">
                 Inicio
               </Link>
             </li>
             <li>
-              <Link
-                to="/portfolio"
-                className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 hover:text-teal-accent-400 hover:font-bold"
-              >
+              <Link to="/portfolio" className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 hover:text-teal-accent-400 hover:font-bold">
                 Portfolio
               </Link>
             </li>
           </ul>
+
           <Link to="/" className="object-center inline-flex items-center mx-auto">
-            <img src="./assets/images/LOGO.png" className="w-40 mx-auto" />
+            <img src="./assets/images/LOGO.png" className="w-30 mx-auto lg:w-40" />
           </Link>
+
           <ul className="flex items-center hidden space-x-24 lg:flex">
             <li>
               <Link
@@ -60,38 +56,30 @@ export function NavigationMenu({ isLoggedIn }) {
                 </li>
               ) : (
                 <li>
-                  <Link to="/login">Iniciar Sesión</Link>
+                  <Link to="/login">Login</Link>
                 </li>
               )}
             </ul>
           </ul>
           <div className="lg:hidden">
-            <button
-              id="open-menu"
-              aria-label="Open Menu"
-              title="Open Menu"
+            <button id="open-menu" aria-label="Open Menu" title="Open Menu"
               className={`open p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline ${
                 isMobileMenuOpen ? 'hidden' : ''
               }`}
-              onClick={toggleMobileMenu}
-            >
-              <svg className="hamburguesa w-6 text-black lg:hidden" viewBox="0 0 24 24">
+              onClick={toggleMobileMenu}>
+              <svg className="hamburguesa w-8 text-black lg:hidden" viewBox="0 0 24 24">
                 <path fill="currentColor" d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"></path>
                 <path fill="currentColor" d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z"></path>
                 <path fill="currentColor" d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"></path>
               </svg>
             </button>
-            <div
-              id="menu"
-              className={`absolute top-0 left-0 w-full  z-10 ${isMobileMenuOpen ? 'open' : 'hidden'}`}
-            >
+
+            <div id="menu" className={`absolute top-0 left-0 w-full  z-10 ${isMobileMenuOpen ? 'open' : 'hidden'}`}>
               <div className="p-5 bg-white border rounded shadow-sm">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <button
-                      id="close-menu"
-                      aria-label="Close Menu"
-                      title="Close Menu"
+                    <button id="close-menu"
+                      aria-label="Close Menu" title="Close Menu"
                       className="p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                       onClick={toggleMobileMenu}
                     >
@@ -150,5 +138,5 @@ export function NavigationMenu({ isLoggedIn }) {
         </div>
       </div>
     </div>
-  );
+  )
 }
