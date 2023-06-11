@@ -36,16 +36,11 @@ export function Tittle({ title }) {
 
     return (
         <section ref={ref}>
-            <animated.h2
-                className="italianno flex justify-center text-7xl font-medium text-gray-900"
-                style={animation}
-            >
+            <animated.h2 className="italianno flex justify-center text-7xl font-medium text-gray-900" style={animation}>
                 {title}
             </animated.h2>
 
-            <ReactModal
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}
+            <ReactModal isOpen={modalIsOpen} onRequestClose={closeModal}
                 style={{
                     overlay: {
                         backgroundColor: 'rgba(0, 0, 0, 0.5)',

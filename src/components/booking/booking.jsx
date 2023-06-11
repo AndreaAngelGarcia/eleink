@@ -7,7 +7,7 @@ export function Booking() {
                     <p className="italiana text-md text-black mt-1 lg:text-2xl">Rellena este formulario y nos pondremos en
                         contacto contigo.</p>
                     <button type="submit" className="block bg-white mt-6 mx-auto py-2 rounded-2xl font-bold mb-2"><img
-                        src="./src/assets/images/foto1.PNG" className="w-48" /></button>
+                        src="./assets/images/foto1.PNG" className="w-48" /></button>
                 </div>
             </div>
 

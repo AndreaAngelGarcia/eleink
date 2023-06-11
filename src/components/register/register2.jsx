@@ -38,10 +38,6 @@ export function Register2() {
 
     return (
         <section>
-            {/* Separadores negros*/}
-            <img src="./src/assets/images/foto.png" />
-            <img src="./src/assets/images/foto4.png" />
-
             {/* Sección login*/}
             <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
                 <div className="flex flex-col items-center justify-center bg-gray-100 rounded-tl-lg rounded-bl-lg m-0">

@@ -75,7 +75,7 @@ export function Login2() {
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen lg:mt-0">
         <div className="flex flex-col items-center justify-center bg-white rounded-tl-lg rounded-bl-lg m-0 lg:mt-0">
           <div className="my-4">
-            <img src="./src/assets/images/LOGO.png" alt="JT Devs" width="100" height="100" />
+            <img src="./assets/images/LOGO.png" alt="JT Devs" width="100" height="100" />
           </div>
           <div className="flex flex-col items-center gap-8">
             <h1 className="text-4xl font-bold text-gray-900">Bienvenido a ELEINK</h1>
@@ -176,7 +176,7 @@ export function Login2() {
 
         {/* Foto parte derecha */}
         <div className="hidden lg:flex items-center justify-center lg:mt-0">
-          <img src="./src/assets/images/elena.jpg" className="w-7/12 object-cover" />
+          <img src="./assets/images/elena.jpg" className="w-7/12 object-cover" />
         </div>
       </div>
     </section>
