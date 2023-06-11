@@ -37,15 +37,13 @@ export function NavigationMenu({ isLoggedIn }) {
           </ul>
 
           <Link to="/" className="object-center inline-flex items-center mx-auto">
-            <img src="./assets/images/LOGO.png" className="w-10 mx-auto lg:w-40" />
+            <img src="./assets/images/LOGO.png" className="w-20 mx-auto lg:w-40" />
           </Link>
 
           <ul className="flex items-center hidden space-x-24 lg:flex">
             <li>
-              <Link
-                to="/booking"
-                className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 hover:text-teal-accent-400 hover:font-bold"
-              >
+              <Link to="/booking" className="font-medium tracking-wide text-6xl text-black transition-colors 
+                    duration-200 hover:text-teal-accent-400 hover:font-bold">
                 Pide cita
               </Link>
             </li>
@@ -81,8 +79,7 @@ export function NavigationMenu({ isLoggedIn }) {
                     <button id="close-menu"
                       aria-label="Close Menu" title="Close Menu"
                       className="p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                      onClick={toggleMobileMenu}
-                    >
+                      onClick={toggleMobileMenu}>
                       <svg className="w-5 text-black" viewBox="0 0 24 24">
                         <path
                           fill="currentColor"
