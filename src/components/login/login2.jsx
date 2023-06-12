@@ -44,7 +44,7 @@ export function Login2() {
       navigate('/login')
     }
   };
-  
+
   return (
     <section>
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen lg:mt-0">
@@ -104,13 +104,13 @@ export function Login2() {
                   </label>
                 </div>
               </div>
-              <div className="w-full max-w-md mx-auto flex items-center justify-between text-gray-500 mb-8">
+              {/*<div className="w-full max-w-md mx-auto flex items-center justify-between text-gray-500 mb-8">
                 <div>
                   <Link to="/signin" className="hover:underline hover:text-gray-900 transition-all">
                     ¿Olvidaste tu contraseña?
                   </Link>
                 </div>
-              </div>
+  </div>*/}
               <div className="w-full max-w-md mx-auto">
                 <button
                   type="submit"
