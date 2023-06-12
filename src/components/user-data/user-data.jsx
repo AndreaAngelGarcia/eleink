@@ -30,7 +30,7 @@ export function UserData() {
 
     {/* EDITAR  EL USUARIO */ }
     const handleEdit = () => {
-        fetch(`https://eleink-openapi.onrender.com/users/${formulario.email}`, {
+        fetch(`http://localhost:3000/users/${formulario.email}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
