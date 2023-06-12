@@ -29,27 +29,40 @@ export function UserData() {
     };
 
     // EDITAR EL USUARIO
+
     const handleEdit = () => {
-        fetch(`https://eleink-openapi.onrender.com/users/${formulario.email}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token.token}`
-            },
-            body: JSON.stringify(formulario) 
-        })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    toast.success('Campos del usuario modificados correctamente');
-                } else {
-                    toast.error('Error al modificar los campos del usuario');
-                }
+        try {
+            fetch(`https://eleink-openapi.onrender.com/users/${formulario.email}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token.token}`
+                },
+                body: JSON.stringify({
+                    name: token.name,
+                    email: token.email,
+                    birthday: token.birthday,
+                    phone: token.phone,
+                    password: token.password,
+                    userInstagram: token.userInstagram
+                })
             })
-            .catch(error => {
-                console.error('Error al comunicarse con el servidor', error);
-            });
-    };
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        toast.success('Campos del usuario modificados correctamente');
+                    } else {
+                        toast.error('Error al modificar los campos del usuario');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error al comunicarse con el servidor', error);
+                });
+        } catch (err) {
+            alert('usuario incorrecto');
+        }
+    }
+
 
     // BORRAR EL USUARIO
     const handleDelete = () => {
