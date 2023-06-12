@@ -36,7 +36,7 @@ export function Tittle({ title }) {
 
     return (
         <section ref={ref}>
-            <animated.h2 className="italianno flex justify-center text-7xl font-medium text-gray-900" style={animation}>
+            <animated.h2 className="italianno flex justify-center mt-2 text-4xl font-bold text-gray-900 lg:text-7xl" style={animation}>
                 {title}
             </animated.h2>
 
