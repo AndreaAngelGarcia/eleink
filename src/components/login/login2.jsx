@@ -45,31 +45,6 @@ export function Login2() {
     }
   };
 
-  {/*const handleSubmit = async (e) => {
-    e.preventDefault();
-    fetch('http://localhost:3000/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(loginForm),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        const datos = await response.json();
-        console.log(datos);
-        console.log(data);
-        setIsLoggedIn(true);
-
-        // Guardar los datos del usuario en el localStorage
-        localStorage.setItem('userData', JSON.stringify(response));
-        
-        navigate('/user-data');
-      })
-      .catch((error) => {
-        console.error(error);
-      });*/}
-
   return (
     <section>
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen lg:mt-0">
@@ -79,22 +54,9 @@ export function Login2() {
           </div>
           <div className="flex flex-col items-center gap-8">
             <h1 className="text-4xl font-bold text-gray-900">Bienvenido a ELEINK</h1>
-            <button className="flex items-center gap-2 bg-white py-2 px-4 rounded-lg">
-              <svg
-                stroke="currentColor"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                height="1em"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {/* Icono de Google */}
-              </svg>
-              Iniciar sesión con Google
-            </button>
           </div>
           <div className="mt-14 mb-5">
-            <p className="text-center relative text-gray-500 bg-gray-100 before:max-w-[50px] md:before:max-w-[120px] before:w-full before:-left-[60px] md:before:-left-[140px] before:h-[1px] before:bg-current before:absolute before:top-[50%] after:max-w-[50px] md:after:max-w-[120px] after:w-full after:h-[1px] after:bg-current after:absolute after:top-[50%] after:-right-[60px] md:after:-right-[140px]">
+            <p className="text-center relative text-gray-500 bg-white before:max-w-[50px] md:before:max-w-[120px] before:w-full before:-left-[60px] md:before:-left-[140px] before:h-[1px] before:bg-current before:absolute before:top-[50%] after:max-w-[50px] md:after:max-w-[120px] after:w-full after:h-[1px] after:bg-current after:absolute after:top-[50%] after:-right-[60px] md:after:-right-[140px]">
               Inicia sesión con tu email
             </p>
           </div>
@@ -147,11 +109,7 @@ export function Login2() {
                   <input type="checkbox" id="remember" />
                   <label htmlFor="remember">Recordarme</label>
                 </div>
-                <div>
-                  <Link to="/signin" className="hover:underline hover:text-gray-900 transition-all">
-                    ¿Olvidaste tu contraseña?
-                  </Link>
-                </div>
+                
               </div>
               <div className="w-full max-w-md mx-auto">
                 <button
