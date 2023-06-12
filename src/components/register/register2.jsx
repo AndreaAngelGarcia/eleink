@@ -23,31 +23,32 @@ export function Register2() {
 
     const handleSubmit = async (x) => {
         x.preventDefault();
-    
+
         try {
-          const response = await fetch('https://eleink-openapi.onrender.com/signin', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formulario)
-          });
-    
-          if (response.ok) {
-            toast.success('Login correcto');
-            navigate('/user-data')
-    
-            const datos = await response.json();
-            console.log(datos);
-    
-          } else {
-            toast.error('No has introducido ningún campo.');
-          }
+            const response = await fetch('https://eleink-openapi.onrender.com/signin', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formulario)
+            });
+
+            if (response.ok) {
+                toast.success('Login correcto');
+                navigate('/user-data')
+
+                const datos = await response.json();
+                console.log(datos);
+                localStorage.setItem('userData', JSON.stringify(datos));
+                localStorage.setItem('isLoggedIn', true);
+            } else {
+                toast.error('No has introducido ningún campo.');
+            }
         } catch (error) {
-          console.error('Error:', error);
-          navigate('/signin')
+            console.error('Error:', error);
+            navigate('/signin')
         }
-      };
+    };
 
     return (
         <section className="mb-8">
@@ -156,7 +157,7 @@ export function Register2() {
                 </div>
             </div>
             {/* ALERTAS */}
-        <ToastContainer position="top-center" />
+            <ToastContainer position="top-center" />
         </section>
     )
 }
