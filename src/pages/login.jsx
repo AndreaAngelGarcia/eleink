@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet';
 import { BlackDividers } from '../components/black-dividers/black-dividers';
 import { Login } from '../components/login/login';
 import { Footer } from '../components/footer/footer';
@@ -8,6 +9,9 @@ import { Tittle } from '../components/tittle/tittle';
 export function LoginPage() {
     return (
         <div className="m-0 p-0">
+            <Helmet>
+            <title>Login</title>
+            </Helmet>
             <ButtonBackToTop />
             <NavigationMenu/>
             <BlackDividers />

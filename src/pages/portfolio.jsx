@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet';
 import { Footer } from '../components/footer/footer';
 import { Tittle } from '../components/tittle/tittle';
 import { ButtonBackToTop } from '../components/button-back-to-top/button-back-to-top';
@@ -8,6 +9,9 @@ import { NavigationMenu } from '../components/nav/nav';
 export function PortfolioPage() {
     return (
         <div>
+            <Helmet>
+            <title>Portfolio</title>
+            </Helmet>
             <ButtonBackToTop />
             <NavigationMenu />
             <BlackDividers />
