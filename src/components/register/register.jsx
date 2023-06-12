@@ -137,8 +137,8 @@ export function Register() {
                             </div>
                         </div>
 
-                        <div className="w-full max-w-md mx-auto mb-4">
-                            <button type="submit" onClick={handleSubmit} className="w-full bg-gray-200 py-2 px-4 rounded-lg text-gray-900 text-bold  hover:bg-gray-300 transition-colors">
+                        <div className="w-56 max-w-md mx-auto mb-3">
+                            <button type="submit" onClick={handleSubmit} className="w-56 lg:w-full bg-gray-200 py-2 px-4 rounded-lg text-gray-900 hover:bg-gray-600 hover:text-white transition-colors">
                                 Regístrate
                             </button>
                         </div>
