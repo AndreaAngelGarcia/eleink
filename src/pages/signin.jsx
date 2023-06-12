@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
 import { Footer } from '../components/footer/footer';
-import { Register2 } from '../components/register/register2';
+import { Register } from '../components/register/register';
 import { ButtonBackToTop } from '../components/button-back-to-top/button-back-to-top';
 import { NavigationMenu } from '../components/nav/nav';
 import { BlackDividers } from '../components/black-dividers/black-dividers';
@@ -16,7 +16,7 @@ export function SigninPage() {
             <NavigationMenu />
             <BlackDividers />
             <Tittle title="Registro" />
-            <Register2 />
+            <Register />
             <Footer />
         </div>
     )
