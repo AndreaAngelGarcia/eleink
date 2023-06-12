@@ -86,10 +86,10 @@ export function UserData() {
                 <div className="flex justify-center">
                     {/*NOMBRE*/}
                     <div className="relative w-72 mt-5 ">
-                        <input type="text" name="name" id="name" placeholder="Correo electrónico" onChange={handleChange}
+                        <input type="text" name="name" id="name" placeholder="Nombre" onChange={handleChange}
                             className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
                             autoComplete="off" />
-                        <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
+                        <label htmlFor="name" className="pointer-events-none absolute top-0 left-0 
                                         ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
                                         peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
                             {formulario.name}
@@ -114,10 +114,10 @@ export function UserData() {
                 {/*FECHA NACIMIENTO*/}
                 <div className="flex justify-center">
                     <div className="relative w-72 mt-5 ">
-                        <input type="text" name="birthday" id="birthday" placeholder="Correo electrónico" onChange={handleChange}
+                        <input type="text" name="birthday" id="birthday" placeholder="Fecha de nacimiento" onChange={handleChange}
                             className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
                             autoComplete="off" />
-                        <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
+                        <label htmlFor="birthday" className="pointer-events-none absolute top-0 left-0 
                                         ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
                                         peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
                             {formulario.birthday}
@@ -128,10 +128,10 @@ export function UserData() {
                 {/*TELÉFONO*/}
                 <div className="flex justify-center">
                     <div className="relative w-72 mt-5 ">
-                        <input type="phone" name="phone" id="phone" placeholder="Correo electrónico" onChange={handleChange}
+                        <input type="phone" name="phone" id="phone" placeholder="Teléfono" onChange={handleChange}
                             className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
                             autoComplete="off" />
-                        <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
+                        <label htmlFor="phone" className="pointer-events-none absolute top-0 left-0 
                                         ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
                                         peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
                             {formulario.phone}
@@ -142,10 +142,10 @@ export function UserData() {
                 {/*USUARIO INSTAGRAM*/}
                 <div className="flex justify-center">
                     <div className="relative w-72 mt-5 ">
-                        <input type="text" name="userInstagram" id="userInstagram" placeholder="Correo electrónico" onChange={handleChange}
+                        <input type="text" name="userInstagram" id="userInstagram" placeholder="Usuario de Instagram" onChange={handleChange}
                             className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
                             autoComplete="off" />
-                        <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
+                        <label htmlFor="userInstagram" className="pointer-events-none absolute top-0 left-0 
                                         ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
                                         peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
                             {formulario.userInstagram}
@@ -156,10 +156,10 @@ export function UserData() {
                 {/*CONTRASEÑA*/}
                 <div className="flex justify-center  mb-6">
                     <div className="relative w-72 mt-5 ">
-                        <input type="password" name="password" id="password" placeholder="Correo electrónico" onChange={handleChange}
+                        <input type="password" name="password" id="password" placeholder="Contraseña" onChange={handleChange}
                             className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
                             autoComplete="off" />
-                        <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
+                        <label htmlFor="password" className="pointer-events-none absolute top-0 left-0 
                                         ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
                                         peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
                             {formulario.password}
