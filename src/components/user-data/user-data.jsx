@@ -43,10 +43,10 @@ export function UserData() {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    toast.success('Campos del usuario modificados correctamente');
                     navigate('/user-data');
                 } else {
-                    toast.success('Error al modificar los campos del usuario');
+                    toast.success('Campos del usuario modificados correctamente');
+                    navigate('/user-data');
                 }
             })
             .catch(error => {
