@@ -45,7 +45,8 @@ export function UserData() {
                 if (data.success) {
                     toast.success('Campos del usuario modificados correctamente');
                 } else {
-                    toast.sucess('Campos del usuario modificados correctamente');
+                    navigate('/');
+                    toast.error('Error al modificar los campos del usuario');
                 }
             })
             .catch(error => {
