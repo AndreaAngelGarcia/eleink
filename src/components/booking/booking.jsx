@@ -14,8 +14,9 @@ export function Booking() {
         size: '',
         description: '',
     });
-    const [setError] = useState(false);
-    const [setSuccess] = useState(false);
+
+    const [error, setError] = useState(false);
+    const [success, setSuccess] = useState(false);
 
     const navigate = useNavigate();
 
