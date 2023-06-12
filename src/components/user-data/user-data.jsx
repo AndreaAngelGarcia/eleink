@@ -30,7 +30,7 @@ export function UserData() {
 
     // EDITAR EL USUARIO
     const handleEdit = () => {
-        fetch(`http://localhost:3000/users/${formulario.email}`, {
+        fetch(`https://eleink-openapi.onrender.com/${formulario.email}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ export function UserData() {
 
     // BORRAR EL USUARIO
     const handleDelete = () => {
-        fetch(`http://localhost:3000/users/${formulario.email}`, {
+        fetch(`https://eleink-openapi.onrender.com${formulario.email}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
