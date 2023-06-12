@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
@@ -132,8 +133,8 @@ export function Booking() {
                                 </div>
 
                                 <div className="my-6">
-                                    <button type="submit" onClick={handleSubmit} className="italiana w-56 lg:w-80 rounded-md text-lg bg-black px-3 py-4 text-white
-                                hover:bg-gray-600">Enviar</button>
+                                    <Link to="/"><button type="submit" onClick={handleSubmit} className="italiana w-56 lg:w-80 rounded-md text-lg bg-black px-3 py-4 text-white
+                                hover:bg-gray-600">Enviar</button></Link>
                                 </div>
                             </form>
                         </div>
