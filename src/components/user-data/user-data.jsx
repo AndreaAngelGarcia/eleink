@@ -30,7 +30,8 @@ export function UserData() {
 
     // EDITAR EL USUARIO
 
-    const handleEdit = () => {
+    const handleEdit = (x) => {
+        x.preventDefault();
         try {
             fetch(`https://eleink-openapi.onrender.com/users/${formulario.email}`, {
                 method: 'PUT',
