@@ -44,8 +44,8 @@ export function UserData() {
             .then(data => {
                 if (data.success) {
                     toast.success('Campos del usuario modificados correctamente');
-                } else {
                     navigate('/user-data');
+                } else {
                     toast.error('Error al modificar los campos del usuario');
                 }
             })
@@ -67,6 +67,7 @@ export function UserData() {
             .then((data) => {
                 if (data) {
                     toast.success('Usuario eliminado correctamente');
+                    navigate('/');
                     // Realiza la redirección a la página deseada, por ejemplo, la página de inicio
                 } else {
                     toast.error('Error al eliminar el usuario');
