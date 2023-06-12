@@ -18,7 +18,7 @@ export function GalleryPortfolio() {
   return (
     <div>
       {/* BOTONES */}
-      <div className="flex justify-center mt-6 p-6 space-x-4 md:space-x-8 lg:space-x-20 lg:mt-4">
+      <div className="flex justify-center p-6 space-x-5 md:space-x-8 lg:space-x-20 lg:mt-4">
         <button
           id="button1"
           className="w-40 h-32 shadow-xl rounded-xl border border-purple-700 inline-flex items-center"
