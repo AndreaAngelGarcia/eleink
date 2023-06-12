@@ -14,8 +14,8 @@ export function Booking() {
         size: '',
         description: '',
     });
-    const [error, setError] = useState(false);
-    const [success, setSuccess] = useState(false);
+    const [setError] = useState(false);
+    const [setSuccess] = useState(false);
 
     const navigate = useNavigate();
 
@@ -53,7 +53,6 @@ export function Booking() {
             if (response.ok) {
                 setSuccess(true);
                 toast.success('El formulario se envió correctamente.');
-                
                 const datos = await response.json();
                 console.log(datos);
             } else {
