@@ -21,7 +21,7 @@ export function Booking() {
         x.preventDefault();
 
         try {
-            const response = await fetch('https://localhost:3000/mailform', {
+            const response = await fetch('http://localhost:3000/mailform', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
