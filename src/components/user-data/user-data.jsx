@@ -30,7 +30,7 @@ export function UserData() {
 
     // EDITAR EL USUARIO
     const handleEdit = () => {
-        fetch(`https://eleink-openapi.onrender.com/${formulario.email}`, {
+        fetch(`https://eleink-openapi.onrender.com/users/${formulario.email}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ export function UserData() {
 
     // BORRAR EL USUARIO
     const handleDelete = () => {
-        fetch(`https://eleink-openapi.onrender.com/${formulario.email}`, {
+        fetch(`https://eleink-openapi.onrender.com/users/${formulario.email}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -63,6 +63,7 @@ export function UserData() {
             .then((data) => {
                 if (data) {
                     toast.success('Usuario eliminado correctamente');
+                    // Realiza la redirección a la página deseada, por ejemplo, la página de inicio
                 } else {
                     toast.error('Error al eliminar el usuario');
                 }
