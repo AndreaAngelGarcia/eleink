@@ -30,24 +30,24 @@ export function GalleryPortfolio() {
 
         <button
           id="button2"
-          className="w-40 h-40 shadow-xl rounded-xl border border-purple-700 inline-flex items-center"
+          className="w-40 h-32 shadow-xl rounded-xl border border-purple-700 inline-flex items-center"
           onClick={() => showContent('content-eletinytats')}
         >
           <img
             src="./assets/images/LOGO2.png"
-            className="w-24 hover:w-28 lg:w-28 mx-auto lg:hover:w-32"
+            className="w-16 hover:w-20 lg:w-28 mx-auto lg:hover:w-32"
             alt=""
           />
         </button>
 
         <button
           id="button3"
-          className="w-40 h-40 shadow-xl rounded-xl border border-purple-700 inline-flex items-center"
+          className="w-40 h-32 shadow-xl rounded-xl border border-purple-700 inline-flex items-center"
           onClick={() => showContent('content-piercing')}
         >
           <img
             src="./assets/images/piercing.jpg"
-            className="w-24 hover:w-28 lg:w-28 mx-auto lg:hover:w-32"
+            className="w-16 hover:w-20 lg:w-28 mx-auto lg:hover:w-32"
             alt=""
           />
         </button>
