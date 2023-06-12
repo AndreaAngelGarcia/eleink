@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 //import { DatePicker } from '@ant-design/icons';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react';
 
 export function Register2() {
@@ -14,27 +15,39 @@ export function Register2() {
         rol: '',
     });
 
+    const navigate = useNavigate();
+    
     const handleChange = (x) => {
         setFormulario({ ...formulario, [x.target.name]: x.target.value })
     };
 
-    const handleSubmit = (x) => {
+    const handleSubmit = async (x) => {
         x.preventDefault();
-        fetch('https://eleink-openapi.onrender.com/signin', {
+    
+        try {
+          const response = await fetch('https://eleink-openapi.onrender.com/signin', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+              'Content-Type': 'application/json'
             },
             body: JSON.stringify(formulario)
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data);
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-    };
+          });
+    
+          if (response.ok) {
+            toast.success('Login correcto');
+            navigate('/user-data')
+    
+            const datos = await response.json();
+            console.log(datos);
+    
+          } else {
+            toast.error('Usuario y/o contraseña incorrectas');
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          navigate('/signin')
+        }
+      };
 
     return (
         <section className="mb-8">
@@ -126,10 +139,9 @@ export function Register2() {
                         </div>
 
                         <div className="w-full max-w-md mx-auto mb-4">
-                            <Link to="/login"><button type="submit" onClick={handleSubmit} className="w-full bg-gray-200 py-2 px-4 rounded-lg text-gray-900 text-bold  hover:bg-gray-300 transition-colors">
+                            <button type="submit" onClick={handleSubmit} className="w-full bg-gray-200 py-2 px-4 rounded-lg text-gray-900 text-bold  hover:bg-gray-300 transition-colors">
                                 Regístrate
                             </button>
-                            </Link>
                         </div>
                     </form>
                 </div>
@@ -143,6 +155,8 @@ export function Register2() {
                     </span>
                 </div>
             </div>
+            {/* ALERTAS */}
+        <ToastContainer position="top-center" />
         </section>
     )
 }
