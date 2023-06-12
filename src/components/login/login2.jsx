@@ -110,7 +110,7 @@ export function Login2() {
                     ¿Olvidaste tu contraseña?
                   </Link>
                 </div>
-  </div>*/}
+              </div>*/}
               <div className="w-full max-w-md mx-auto">
                 <button
                   type="submit"

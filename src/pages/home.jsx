@@ -12,7 +12,7 @@ export function HomePage() {
         <div className="m-0 p-0">
             <ButtonBackToTop />
             <NavigationMenu/>
-            <BannerHome />
+            <BannerHome/>
             <AboutHome />
             <BlackDividers />
             <Tittle title="Portfolio" />

@@ -21,7 +21,7 @@ export function NavigationMenu({ isLoggedIn }) {
 
   return (
     <div className="italianno bg-white">
-      <div className="px-4 py-6 mx-auto lg:py-8 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pb-0">
+      <div className="px-4 py-6 mb-2 mx-auto lg:py-8 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pb-0">
         <div className="relative flex items-center lg:justify-center">
           <ul className="flex items-center hidden space-x-24 lg:flex">
             <li>
@@ -47,17 +47,10 @@ export function NavigationMenu({ isLoggedIn }) {
                 Pide cita
               </Link>
             </li>
-            <ul>
-              {isLoggedIn ? (
-                <li>
-                  <Link to="/user-data">Datos de Usuario</Link>
-                </li>
-              ) : (
-                <li>
-                  <Link to="/login">Login</Link>
-                </li>
-              )}
-            </ul>
+            
+            <li>
+              <Link to="/login" className="font-medium tracking-wide text-6xl text-black transition-colors duration-200 hover:text-teal-accent-400 hover:font-bold">Login</Link>
+            </li>
           </ul>
           <div className="lg:hidden">
             <button id="open-menu" aria-label="Open Menu" title="Open Menu"
