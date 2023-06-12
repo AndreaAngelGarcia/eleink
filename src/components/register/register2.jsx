@@ -38,11 +38,10 @@ export function Register2() {
 
     return (
         <section>
-            {/* Sección login*/}
             <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
                 <div className="flex flex-col items-center justify-center bg-white rounded-tl-lg rounded-bl-lg m-0">
                     <div className="my-4">
-                        <img src="./assets/images/LOGO.PNG" width="100" height="100" />
+                        <img src="./assets/images/LOGO.png" width="100" height="100" />
                     </div>
                     <div className="flex flex-col items-center gap-8">
                         <h1 className="text-4xl font-bold text-gray-900">REGÍSTRATE</h1>
