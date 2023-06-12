@@ -40,7 +40,6 @@ export function Register2() {
                 const datos = await response.json();
                 console.log(datos);
                 localStorage.setItem('userData', JSON.stringify(datos));
-                localStorage.setItem('isLoggedIn', true);
             } else {
                 toast.error('No has introducido ningún campo.');
             }
