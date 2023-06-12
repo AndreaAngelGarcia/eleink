@@ -3,7 +3,7 @@ export function Booking() {
         <div className="h-screen md:flex">
             <div className="relative mx-auto mt-8 md:flex w-1/2 bg-white justify-around items-center lg:mx-4">
                 <div>
-                    <h1 className="italianno text-5xl text-black font-bold lg:text-6xl">¿Quieres coger cita para tatuarte?</h1>
+                    <h1 className="italianno text-5xl text-black font-bold lg:text-6xl">¿Quieres pedir cita para tatuarte?</h1>
                     <p className="italiana text-md text-black mt-1 lg:text-2xl">Rellena este formulario y nos pondremos en
                         contacto contigo.</p>
                     <button type="submit" className="block bg-white mt-6 mx-auto py-2 rounded-2xl font-bold mb-2"><img
