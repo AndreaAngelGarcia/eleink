@@ -1,4 +1,5 @@
 //import { Link } from 'react-router-dom';
+import { Tittle } from "../tittle/tittle";
 
 export function AboutHome() {
     return (
@@ -6,9 +7,7 @@ export function AboutHome() {
             <div className="grid gap-10 lg:grid-cols-2">
                 <div className="flex flex-col justify-center md:pr-8 xl:pr-0 lg:max-w-lg">
                     <div className="max-w-xl mb-6">
-                        <h2 className="italianno mx-auto max-w-lg mb-6 text-6xl font-medium tracking-tight text-gray-900 sm:text-7xl ">
-                            Sobre Mí
-                        </h2>
+                        <Tittle title="Sobre Mí" />
                         <p className="italiana text-xl text-justify text-gray-700 md:text-lg">
                             Soy Elena Conde, tengo 26 años y mi pasión es el tatuaje desde hace muchos años. Actualmente vivo en Madrid
                             pero he tatuado en Sevilla durante muchos años. Soy tatuadora profesional y perforadora.
