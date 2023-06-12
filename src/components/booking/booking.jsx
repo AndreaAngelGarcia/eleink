@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export function Booking() {
     return (
         <div className="h-screen md:flex">
@@ -73,7 +75,7 @@ export function Booking() {
 
                             <div className="my-6">
                                 <button type="submit" className="italiana w-full rounded-md text-lg bg-black px-3 py-4 text-white
-                                hover:bg-gray-600"><a href="home.html">ENVIAR</a></button>
+                                hover:bg-gray-600"><Link to="/home">ENVIAR</Link></button>
                             </div>
                         </form>
                     </div>
