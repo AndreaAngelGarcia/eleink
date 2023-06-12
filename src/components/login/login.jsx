@@ -1,5 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export function Login() {
   const [loginForm, setLoginForm] = useState({
@@ -26,7 +28,7 @@ export function Login() {
       });
 
       if (response.ok) {
-
+        toast.success('Login correcto');
         navigate('/user-data')
 
         const datos = await response.json();
@@ -34,10 +36,8 @@ export function Login() {
 
         localStorage.setItem('userData', JSON.stringify(datos));
         localStorage.setItem('isLoggedIn', true);
-
-
       } else {
-        alert('usuario y/o contraseña incorrecto')
+        toast.error('Usuario y/o contraseña incorrectas');
       }
     } catch (error) {
       console.error('Error:', error);
@@ -112,6 +112,8 @@ export function Login() {
             </span>
           </div>
         </div>
+        {/* ALERTAS */}
+        <ToastContainer position="top-center" />
     </section>
   )
 }
