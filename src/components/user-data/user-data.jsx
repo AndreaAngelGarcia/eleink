@@ -46,8 +46,7 @@ export function UserData() {
                     toast.success('Campos del usuario modificados correctamente');
                     navigate('/user-data');
                 } else {
-                    toast.error('Error al modificar los campos del usuario');
-                    navigate('/user-data');
+                    toast.success('Error al modificar los campos del usuario');
                 }
             })
             .catch(error => {
@@ -175,12 +174,14 @@ export function UserData() {
                 <div className="w-full max-w-md mx-auto mb-4">
                     <button type="submit" onClick={handleEdit}
                         className="w-full bg-gray-200 py-2 px-4 rounded-lg text-gray-900 hover:bg-gray-300 transition-colors">
+                        Editar información
                     </button>
                 </div>
 
                 <div className="w-full max-w-md mx-auto mb-4">
                     <button type="button" onClick={handleDelete}
                         className="w-full bg-red-600 py-2 px-4 rounded-lg text-white hover:bg-gray-300 transition-colors">
+                         Eliminar usuario
                     </button>
                 </div>
 
