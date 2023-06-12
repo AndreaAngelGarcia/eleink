@@ -28,29 +28,28 @@ export function UserData() {
         setFormulario({ ...formulario, [e.target.name]: e.target.value });
     };
 
-    {/* EDITAR  EL USUARIO */ }
+    // EDITAR EL USUARIO
     const handleEdit = () => {
-        fetch(`http://localhost:3000/users/${formulario.email}`, {
+        fetch(`https://eleink-openapi.onrender.com/users/${formulario.email}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token.token}`
             },
+            body: JSON.stringify(formulario) 
         })
-          .then(response => response.json())
-          .then(data => {
-            if (data.success) {
-              // Los campos del usuario se modificaron correctamente, puedes redirigir o mostrar un mensaje de éxito
-              console.log('Campos del usuario modificados correctamente');
-            } else {
-              // Hubo un error al modificar los campos del usuario, puedes mostrar un mensaje de error
-              console.error('Error al modificar los campos del usuario');
-            }
-          })
-          .catch(error => {
-            console.error('Error al comunicarse con el servidor', error);
-          });
-      };
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    toast.success('Campos del usuario modificados correctamente');
+                } else {
+                    toast.error('Error al modificar los campos del usuario');
+                }
+            })
+            .catch(error => {
+                console.error('Error al comunicarse con el servidor', error);
+            });
+    };
 
     // BORRAR EL USUARIO
     const handleDelete = () => {
