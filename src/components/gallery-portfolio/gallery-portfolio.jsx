@@ -21,12 +21,12 @@ export function GalleryPortfolio() {
       <div className="flex justify-center mt-6 p-6 space-x-4 md:space-x-8 lg:space-x-20 lg:mt-4">
         <button
           id="button1"
-          className="w-40 h-40 shadow-xl rounded-xl border border-purple-700 inline-flex items-center"
+          className="w-40 h-36 shadow-xl rounded-xl border border-purple-700 inline-flex items-center"
           onClick={() => showContent('content-eleink')}
         >
           <img
             src="./assets/images/LOGO.PNG"
-            className="w-24 hover:w-28 lg:w-28 mx-auto lg:hover:w-32"
+            className="w-20 hover:w-24 lg:w-28 mx-auto lg:hover:w-32"
             alt=""
           />
         </button>
