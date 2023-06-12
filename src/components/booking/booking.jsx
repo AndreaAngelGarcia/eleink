@@ -3,8 +3,12 @@ import { useState } from 'react';
 
 export function Booking() {
     const [buttonForm, setButtonForm] = useState({
-        email: '',
-        password: '',
+        name: '', 
+        email: '', 
+        phone: '', 
+        instagram: '', 
+        size: '', 
+        description: '',
     });
 
     const navigate = useNavigate();
@@ -56,7 +60,7 @@ export function Booking() {
             <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-white py-6 sm:py-12 lg:ml-32">
                 <div className="relative border mx-auto w-full max-w-md bg-white px-8 pt-10 pb-8 shadow-xl sm:rounded-xl sm:px-10">
                     <div className="w-full">
-                        <form action="/mailform" method="POST">
+                        <form>
                             <div className="relative mt-5">
                                 <input type="name" name="name" id="name" placeholder="Nombre y apelidos" onChange={handleChange}
                                     className="peer w-full rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
@@ -74,7 +78,7 @@ export function Booking() {
                                 </label>
                             </div>
                             <div className="relative mt-5">
-                                <input type="phone" name="telephone" id="phone" placeholder="Teléfono" onChange={handleChange}
+                                <input type="phone" name="phone" id="phone" placeholder="Teléfono" onChange={handleChange}
                                     className="peer w-full rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
                                     autoComplete="off" required />
                                 <label htmlFor="email"
@@ -100,11 +104,6 @@ export function Booking() {
                             </div>
 
                             <div className="relative mt-5">
-                                <label htmlFor="imagen">Subir imagen:</label>
-                                <input type="file" id="image" name="image" /><br /><br />
-                            </div>
-
-                            <div className="relative mt-5">
                                 <textarea type="descripcion" name="description" id="description" placeholder="Descripcion" onChange={handleChange}
                                     className="peer peer w-full rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"></textarea>
 
@@ -115,7 +114,7 @@ export function Booking() {
 
                             <div className="my-6">
                                 <button type="submit" onClick={handleSubmit} className="italiana w-full rounded-md text-lg bg-black px-3 py-4 text-white
-                                hover:bg-gray-600"></button>
+                                hover:bg-gray-600">Enviar</button>
                             </div>
                         </form>
                     </div>
