@@ -47,13 +47,10 @@ export function Login() {
 
   return (
     <section>
-      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen lg:mt-0">
+      <div className="grid grid-cols-1 m-0 lg:grid-cols-2 min-h-screen lg:mt-0">
         <div className="flex flex-col items-center justify-center bg-white rounded-tl-lg rounded-bl-lg m-0 lg:mt-0">
           <div className="my-4">
             <img src="./assets/images/LOGO.png" alt="JT Devs" width="100" height="100" />
-          </div>
-          <div className="flex flex-col items-center gap-8">
-            <h1 className="text-2xl lg:text-4xl font-bold text-gray-900">Bienvenido a ELEINK</h1>
           </div>
           <div className="mt-14 mb-5">
             <p className="text-center relative text-gray-800 bg-white before:max-w-[50px] md:before:max-w-[120px] before:w-full before:-left-[60px] md:before:-left-[140px] before:h-[1px] before:bg-current before:absolute before:top-[50%] after:max-w-[50px] md:after:max-w-[120px] after:w-full after:h-[1px] after:bg-current after:absolute after:top-[50%] after:-right-[60px] md:after:-right-[140px]">
