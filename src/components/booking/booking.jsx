@@ -5,80 +5,80 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Tittle } from '../tittle/tittle';
 
 export function Booking() {
-  const [buttonForm, setButtonForm] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    instagram: '',
-    size: '',
-    description: '',
-  });
-  const [error, setError] = useState(false);
-  const [success, setSuccess] = useState(false);
+    const [buttonForm, setButtonForm] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        instagram: '',
+        size: '',
+        description: '',
+    });
+    const [error, setError] = useState(false);
+    const [success, setSuccess] = useState(false);
 
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    setButtonForm({ ...buttonForm, [e.target.name]: e.target.value });
-  };
+    const handleChange = (e) => {
+        setButtonForm({ ...buttonForm, [e.target.name]: e.target.value });
+    };
 
-  const handleSubmit = async (x) => {
-    x.preventDefault();
+    const handleSubmit = async (x) => {
+        x.preventDefault();
 
-    // Validar campos antes de enviar el formulario
-    if (
-      !buttonForm.name ||
-      !buttonForm.email ||
-      !buttonForm.phone ||
-      !buttonForm.size
-    ) {
-      setError(true);
-      toast.error('Debes rellenar todos los campos.');
-      return;
-    }
-
-    try {
-      const response = await fetch(
-        'https://eleink-openapi.onrender.com/mailform',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(buttonForm),
+        // Validar campos antes de enviar el formulario
+        if (
+            !buttonForm.name ||
+            !buttonForm.email ||
+            !buttonForm.phone ||
+            !buttonForm.size
+        ) {
+            setError(true);
+            toast.error('Debes rellenar todos los campos.');
+            return;
         }
-      );
 
-      if (response.ok) {
-        setSuccess(true);
-        navigate('/');
-        const datos = await response.json();
-        console.log(datos);
-        toast.success('El formulario se envió correctamente.');
-      } else {
-        setError(true);
-        toast.error('Ocurrió un error al enviar el formulario.');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      navigate('/login');
-      toast.error('Ocurrió un error al enviar el formulario.');
-    }
-  };
-  return (
-    <>
-      <Tittle title="¿Quieres pedir cita para tatuarte?" />
-      <div className="h-screen md:flex">
-      <div className="relative mx-auto mt-8 md:flex w-1/2 bg-white justify-around items-center lg:mx-4">
+        try {
+            const response = await fetch(
+                'https://eleink-openapi.onrender.com/mailform',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(buttonForm),
+                }
+            );
+
+            if (response.ok) {
+                setSuccess(true);
+                navigate('/');
+                const datos = await response.json();
+                console.log(datos);
+                toast.success('El formulario se envió correctamente.');
+            } else {
+                setError(true);
+                toast.error('Ocurrió un error al enviar el formulario.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            navigate('/login');
+            toast.error('Ocurrió un error al enviar el formulario.');
+        }
+    };
+    return (
+        <>
+            <Tittle title="¿Quieres pedir cita?" />
+            <div className="h-screen md:flex">
+                <div className="relative mx-auto mt-8 md:flex w-1/2 bg-white justify-around items-center lg:mx-4">
                     <div>
                         <button type="submit" className="block bg-white mt-6 mx-auto py-2 font-bold"><img
                             src="./assets/images/foto1.PNG" className="w-48" /></button>
                     </div>
                 </div>
-        <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-white py-6 sm:py-8 lg:ml-32">
-          <div className="relative border mx-auto w-full max-w-md bg-white px-20 pt-10 pb-8 shadow-xl sm:rounded-xl ">
-            <div className="w-full">
-            <form>
+                <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-white py-6 sm:py-8 lg:ml-32">
+                    <div className="relative border mx-auto w-full max-w-md bg-white px-20 pt-10 pb-8 shadow-xl sm:rounded-xl ">
+                        <div className="w-full">
+                            <form>
                                 <div className="relative mt-5">
                                     <input type="name" name="name" id="name" placeholder="Nombre y apelidos" onChange={handleChange}
                                         className="peer w-80 rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
@@ -135,12 +135,12 @@ export function Booking() {
                                 hover:bg-gray-600">Enviar</button>
                                 </div>
                             </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      {/* Mostrar alertas */}
-      <ToastContainer position="top-center" />
-    </>
-  );
+            {/* Mostrar alertas */}
+            <ToastContainer position="top-center" />
+        </>
+    );
 }
