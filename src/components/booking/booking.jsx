@@ -27,7 +27,6 @@ export function Booking() {
     const handleSubmit = async (x) => {
         x.preventDefault();
 
-        // Validar campos antes de enviar el formulario
         if (
             !buttonForm.name ||
             !buttonForm.email ||

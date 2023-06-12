@@ -23,7 +23,6 @@ export function Register2() {
 
     const handleSubmit = async (x) => {
         x.preventDefault();
-
         try {
             const response = await fetch('https://eleink-openapi.onrender.com/signin', {
                 method: 'POST',
@@ -34,7 +33,7 @@ export function Register2() {
             });
 
             if (response.ok) {
-                toast.success('Login correcto');
+                toast.success('Registro correcto');
                 navigate('/login')
 
                 const datos = await response.json();

@@ -45,7 +45,7 @@ export function UserData() {
                 if (data.success) {
                     navigate('/user-data');
                 } else {
-                    toast.success('Campos del usuario modificados correctamente');
+                    toast.success('Campos del usuario modificados correctamente.');
                     navigate('/user-data');
                 }
             })
