@@ -11,7 +11,7 @@ La página web es un conjunto de páginas donde estarías su portfolio, una pág
 ![FOTO2](recursos/UML.JPG)
 
 ### YAML
-![FOTO3](public/assets/images/yalm.JPG)
+![FOTO3](public/assets/images/yalm.jpg)
 ![FOTO4](public/assets/images/yalm2.JPG)
 
 ### FRONTEND
