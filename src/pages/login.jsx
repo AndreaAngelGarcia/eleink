@@ -1,8 +1,9 @@
 import { BlackDividers } from '../components/black-dividers/black-dividers';
-import { Login2 } from '../components/login/login2';
+import { Login } from '../components/login/login';
 import { Footer } from '../components/footer/footer';
 import { ButtonBackToTop } from '../components/button-back-to-top/button-back-to-top';
 import { NavigationMenu } from '../components/nav/nav';
+import { Tittle } from '../components/tittle/tittle';
 
 export function LoginPage() {
     return (
@@ -10,7 +11,8 @@ export function LoginPage() {
             <ButtonBackToTop />
             <NavigationMenu/>
             <BlackDividers />
-            <Login2 />
+            <Tittle title="Login" />
+            <Login />
             <Footer />
         </div>
     )
