@@ -51,10 +51,10 @@ export function Booking() {
 
             if (response.ok) {
                 setSuccess(true);
+                toast.success('El formulario se envió correctamente.');
                 navigate('/');
                 const datos = await response.json();
                 console.log(datos);
-                toast.success('El formulario se envió correctamente.');
             } else {
                 setError(true);
                 toast.error('Ocurrió un error al enviar el formulario.');
