@@ -8,10 +8,17 @@ La página web es un conjunto de páginas donde estarías su portfolio, una pág
 ![FOTO1](recursos/UML.JPG)
 
 ### BACKEND
-![FOTO2](recursos/UML.JPG)
+![FOTO2](public/assets/images/backend.JPG)
+
+### POSTMAN
+![FOTO3](public/assets/images/postman.JPG)
+
+### UML
+![FOTO4](recursos/UML.JPG)
 
 ### YAML
-![FOTO3](public/assets/images/yalm.jpg)
-![FOTO4](public/assets/images/yalm2.JPG)
+![FOTO3](public/assets/images/yalm.JPG)
+![FOTO4](public/assets/images/yaml2.JPG)
 
 ### FRONTEND
+![FOTO3](public/assets/images/frontend.JPG)
