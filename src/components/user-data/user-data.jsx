@@ -29,41 +29,28 @@ export function UserData() {
     };
 
     // EDITAR EL USUARIO
-
     const handleEdit = (x) => {
         x.preventDefault();
-        try {
-            fetch(`https://eleink-openapi.onrender.com/users/${formulario.email}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token.token}`
-                },
-                body: JSON.stringify({
-                    name: token.name,
-                    email: token.email,
-                    birthday: token.birthday,
-                    phone: token.phone,
-                    password: token.password,
-                    userInstagram: token.userInstagram
-                })
+        fetch(`https://eleink-openapi.onrender.com/users/${formulario.email}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token.token}`
+            },
+            body: JSON.stringify(formulario) 
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    toast.success('Campos del usuario modificados correctamente');
+                } else {
+                    toast.error('Error al modificar los campos del usuario');
+                }
             })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        toast.success('Campos del usuario modificados correctamente');
-                    } else {
-                        toast.error('Error al modificar los campos del usuario');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error al comunicarse con el servidor', error);
-                });
-        } catch (err) {
-            alert('usuario incorrecto');
-        }
-    }
-
+            .catch(error => {
+                console.error('Error al comunicarse con el servidor', error);
+            });
+    };
 
     // BORRAR EL USUARIO
     const handleDelete = () => {
@@ -100,10 +87,10 @@ export function UserData() {
                 <div className="flex justify-center">
                     {/*NOMBRE*/}
                     <div className="relative w-72 mt-5 ">
-                        <input type="text" name="name" id="name" placeholder="Nombre" onChange={handleChange}
+                        <input type="text" name="name" id="name" placeholder="Correo electrónico" onChange={handleChange}
                             className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
                             autoComplete="off" />
-                        <label htmlFor="name" className="pointer-events-none absolute top-0 left-0 
+                        <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
                                         ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
                                         peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
                             {formulario.name}
@@ -128,10 +115,10 @@ export function UserData() {
                 {/*FECHA NACIMIENTO*/}
                 <div className="flex justify-center">
                     <div className="relative w-72 mt-5 ">
-                        <input type="text" name="birthday" id="birthday" placeholder="Fecha de nacimiento" onChange={handleChange}
+                        <input type="text" name="birthday" id="birthday" placeholder="Correo electrónico" onChange={handleChange}
                             className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
                             autoComplete="off" />
-                        <label htmlFor="birthday" className="pointer-events-none absolute top-0 left-0 
+                        <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
                                         ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
                                         peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
                             {formulario.birthday}
@@ -142,10 +129,10 @@ export function UserData() {
                 {/*TELÉFONO*/}
                 <div className="flex justify-center">
                     <div className="relative w-72 mt-5 ">
-                        <input type="phone" name="phone" id="phone" placeholder="Teléfono" onChange={handleChange}
+                        <input type="phone" name="phone" id="phone" placeholder="Correo electrónico" onChange={handleChange}
                             className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
                             autoComplete="off" />
-                        <label htmlFor="phone" className="pointer-events-none absolute top-0 left-0 
+                        <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
                                         ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
                                         peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
                             {formulario.phone}
@@ -156,10 +143,10 @@ export function UserData() {
                 {/*USUARIO INSTAGRAM*/}
                 <div className="flex justify-center">
                     <div className="relative w-72 mt-5 ">
-                        <input type="text" name="userInstagram" id="userInstagram" placeholder="Usuario de Instagram" onChange={handleChange}
+                        <input type="text" name="userInstagram" id="userInstagram" placeholder="Correo electrónico" onChange={handleChange}
                             className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
                             autoComplete="off" />
-                        <label htmlFor="userInstagram" className="pointer-events-none absolute top-0 left-0 
+                        <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
                                         ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
                                         peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
                             {formulario.userInstagram}
@@ -170,10 +157,10 @@ export function UserData() {
                 {/*CONTRASEÑA*/}
                 <div className="flex justify-center  mb-6">
                     <div className="relative w-72 mt-5 ">
-                        <input type="password" name="password" id="password" placeholder="Contraseña" onChange={handleChange}
+                        <input type="password" name="password" id="password" placeholder="Correo electrónico" onChange={handleChange}
                             className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
                             autoComplete="off" />
-                        <label htmlFor="password" className="pointer-events-none absolute top-0 left-0 
+                        <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
                                         ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
                                         peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
                             {formulario.password}
