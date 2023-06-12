@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
 
 export function UserData() {
     const navigate = useNavigate();
-    
+
     const [formulario, setFormulario] = useState({
         name: '',
         email: '',
@@ -27,7 +28,7 @@ export function UserData() {
         setFormulario({ ...formulario, [e.target.name]: e.target.value });
     };
 
-    {/* EDITAR  EL USUARIO */ }
+    // EDITAR EL USUARIO
     const handleEdit = () => {
         fetch(`http://localhost:3000/users/${formulario.email}`, {
             method: 'PUT',
@@ -36,22 +37,20 @@ export function UserData() {
                 'Authorization': `Bearer ${token.token}`
             },
         })
-          .then(response => response.json())
-          .then(data => {
-            if (data.success) {
-              // Los campos del usuario se modificaron correctamente, puedes redirigir o mostrar un mensaje de éxito
-              toast.success('Campos del usuario modificados correctamente');
-            } else {
-              // Hubo un error al modificar los campos del usuario, puedes mostrar un mensaje de error
-              toast.error('Error al modificar los campos del usuario');
-            }
-          })
-          .catch(error => {
-            console.error('Error al comunicarse con el servidor', error);
-          });
-      };
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    toast.success('Campos del usuario modificados correctamente');
+                } else {
+                    toast.error('Error al modificar los campos del usuario');
+                }
+            })
+            .catch(error => {
+                console.error('Error al comunicarse con el servidor', error);
+            });
+    };
 
-    {/* BORRAR EL USUARIO */ }
+    // BORRAR EL USUARIO
     const handleDelete = () => {
         fetch(`http://localhost:3000/users/${formulario.email}`, {
             method: 'DELETE',
@@ -70,17 +69,15 @@ export function UserData() {
                 }
             })
             .catch((error) => {
-                alert(token.token);
                 console.error('Error al comunicarse con el servidor', error);
             });
     };
 
-    
-
     const handleLogout = () => {
-    localStorage.removeItem('userData');
-    navigate('/login'); // Redirige a la página de inicio de sesión
-  };
+        localStorage.removeItem('userData');
+        navigate('/login');
+        toast.info('Sesión cerrada correctamente');
+    };
 
     return (
         <div className="w-full">
@@ -90,7 +87,7 @@ export function UserData() {
                     <div className="relative w-72 mt-5 ">
                         <input type="text" name="name" id="name" placeholder="Correo electrónico" onChange={handleChange}
                             className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
-                            autoComplete="off"/>
+                            autoComplete="off" />
                         <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
                                         ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
                                         peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
@@ -104,7 +101,7 @@ export function UserData() {
                     <div className="relative w-72 mt-5 ">
                         <input type="email" name="email" id="email" placeholder="Correo electrónico" onChange={handleChange}
                             className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
-                            autoComplete="off"/>
+                            autoComplete="off" />
                         <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
                                         ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
                                         peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
@@ -118,7 +115,7 @@ export function UserData() {
                     <div className="relative w-72 mt-5 ">
                         <input type="text" name="birthday" id="birthday" placeholder="Correo electrónico" onChange={handleChange}
                             className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
-                            autoComplete="off"/>
+                            autoComplete="off" />
                         <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
                                         ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
                                         peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
@@ -132,7 +129,7 @@ export function UserData() {
                     <div className="relative w-72 mt-5 ">
                         <input type="phone" name="phone" id="phone" placeholder="Correo electrónico" onChange={handleChange}
                             className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
-                            autoComplete="off"/>
+                            autoComplete="off" />
                         <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
                                         ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
                                         peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
@@ -146,7 +143,7 @@ export function UserData() {
                     <div className="relative w-72 mt-5 ">
                         <input type="text" name="userInstagram" id="userInstagram" placeholder="Correo electrónico" onChange={handleChange}
                             className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
-                            autoComplete="off"/>
+                            autoComplete="off" />
                         <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
                                         ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
                                         peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
@@ -160,7 +157,7 @@ export function UserData() {
                     <div className="relative w-72 mt-5 ">
                         <input type="password" name="password" id="password" placeholder="Correo electrónico" onChange={handleChange}
                             className="peer w-full max-w-md rounded-md border border-gray-300 px-3 py-3 shadow shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
-                            autoComplete="off"/>
+                            autoComplete="off" />
                         <label htmlFor="email" className="pointer-events-none absolute top-0 left-0 
                                         ml-3 origin-left -translate-y-1/2 transform bg-white px-1 text-sm text-gray-500 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 
                                         peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800">
@@ -179,7 +176,7 @@ export function UserData() {
                 <div className="w-full max-w-md mx-auto mb-4">
                     <button type="button" onClick={handleDelete}
                         className="w-full bg-red-600 py-2 px-4 rounded-lg text-white hover:bg-gray-300 transition-colors">
-                         <ToastContainer /> Eliminar usuario
+                        <ToastContainer /> Eliminar usuario
                     </button>
                 </div>
 
@@ -190,6 +187,8 @@ export function UserData() {
                     </button>
                 </div>
             </form>
+            {/* ALERTAS */}
+            <ToastContainer position="top-center" />
         </div>
     )
 }
