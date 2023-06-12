@@ -35,11 +35,11 @@ export function Register2() {
 
             if (response.ok) {
                 toast.success('Login correcto');
-                navigate('/user-data')
+                navigate('/login')
 
                 const datos = await response.json();
                 console.log(datos);
-                
+
             } else {
                 toast.error('No has introducido ningún campo.');
             }
