@@ -16,7 +16,7 @@ export function Register2() {
     });
 
     const navigate = useNavigate();
-    
+
     const handleChange = (x) => {
         setFormulario({ ...formulario, [x.target.name]: x.target.value })
     };
@@ -41,7 +41,7 @@ export function Register2() {
             console.log(datos);
     
           } else {
-            toast.error('Usuario y/o contraseña incorrectas');
+            toast.error('No has introducido ningún campo.');
           }
         } catch (error) {
           console.error('Error:', error);
